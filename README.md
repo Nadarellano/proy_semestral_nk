@@ -1,2 +1,3 @@
 # proy_semestral_nk
-Proyecto semestral  programación web 
+Proyecto semestral  programación web
+CASO B Venta de productos para jardinería
