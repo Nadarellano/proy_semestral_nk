@@ -1,0 +1,86 @@
+body{
+font-family: Georgia, 'Times New Roman', Times, serif;
+margin: 0;
+border: 0;
+
+background-color: rgb(39,174,96);
+
+}
+
+
+.menu{ display: inline-block;
+list-style: none;}
+
+header a {
+    color: white;
+    text-decoration: none;
+
+}
+
+body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+header{
+    padding: 2 rem ;
+   
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul{
+    list-style: none;
+}
+.menu ul li {
+    display: inline-block;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 0.5rem  1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+
+.menu ul li a:hover {
+    background-color: ghostwhite;
+}
+
+.menu{
+    padding: 1rem;
+}
+
+footer{
+    padding: 4rem;
+    
+    text-align: center;
+    display: inline;
+    align-items: center;
+}
+
+
+#imagen{
+        width: 500px;
+        padding: 2rem;
+    }
+
+
+section div {display:inline;}
+
+.principal {
+    display:flex;
+    justify-content: space-between;
+
+}
+.elementoprincipal{
+    text-align: right;
+    padding: 2rem;
+}
+#canasta{
+    padding:unset;
+}
