@@ -92,8 +92,24 @@ section div {display:inline;}
 .menu_prod ul li {
     display: inline-block;
     margin: 10px 100px;
-}
+    font-size:22px;
 
+}
 .maceteros {
     display: inline-block;
 }
+figure{
+    margin: 30;
+    display: inline-block;
+    position: relative;
+
+}
+.imagen_mac{
+    width: 170px;
+    height: 170px;
+    margin: 15px 20px;
+}
+figcaption{
+    position:static;
+}
+
