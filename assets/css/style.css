@@ -164,3 +164,9 @@ figure{
 figcaption{
     position:static;
 }
+
+/*macetero_rojo*/
+img.imagen_mac{
+    float:left;
+
+}
