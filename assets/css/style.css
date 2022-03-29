@@ -166,7 +166,13 @@ figcaption{
 }
 
 /*macetero_rojo*/
-img.imagen_mac{
-    float:left;
-
+div.macet_rojo{
+    text-align: center;
+    display:inline-block;
+}
+#colorh2{
+    color:white;
+}
+#colorh3{
+    color:white;
 }
