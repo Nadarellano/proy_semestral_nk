@@ -15,69 +15,51 @@ list-style: none;
 header a {
     color: white;
     text-decoration: none;
-
 }
-
 body {
     padding-left: 2rem;
     padding-right: 2rem;
 }
-
 header{
     padding: 2 rem ;
-   
 }
-
 .logo{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
-
 .menu ul{
     list-style: none;
 }
 .menu ul li {
     display: inline-block;
 }
-
 .menu ul li a {
     display: block;
     padding: 0.5rem  1rem;
     transition: all 0.4s linear;
     border-radius: 5px;
 }
-
 .menu ul li a:hover {
     background-color: ghostwhite;
 }
-
 .menu{
     padding: 1rem;
 }
-
 footer{
     padding: 4rem;
-    
     text-align: center;
     display: inline;
     align-items: center;
 }
-
-
 #imagen{
         width: 500px;
         padding: 2rem;
     }
-
-
 section div {display:inline;}
-
 .principal {
     display:flex;
     justify-content: space-between;
-
 }
 .elementoprincipal{
     text-align: right;
@@ -88,20 +70,19 @@ section div {display:inline;}
 }
 
 /*prod_maceteros*/
-
 .menu_prod ul li {
     display: inline-block;
-    margin: 10px 100px;
+    margin: 10px 80px;
     font-size:22px;
-
-}
-
+    padding:8px;
+    background-color: white;
+    color: black;
+    }
 figure{
     margin: 30;
     display: inline-block;
     position: relative;
     border: 5px solid yellowgreen
-
 }
 .imagen_mac{
     width: 170px;
@@ -109,6 +90,77 @@ figure{
     margin: 15px 17px;
 }
 figcaption{
-    position:relative;
+    position:static;
 }
 
+/*prod_sustratos*/
+.menu_prod ul li {
+    display: inline-block;
+    margin: 10px 80px;
+    font-size:22px;
+    padding:8px;
+    background-color: white;
+    color: black;
+    }
+figure{
+    margin: 30;
+    display: inline-block;
+    position: relative;
+    border: 5px solid yellowgreen
+}
+.imagen_sust{
+    width: 170px;
+    height: 170px;
+    margin: 15px 17px;
+}
+figcaption{
+    position:static;
+}
+
+/*prod_flores*/
+.menu_prod ul li {
+    display: inline-block;
+    margin: 10px 80px;
+    font-size:22px;
+    padding:8px;
+    background-color: white;
+    color: black;
+}
+figure{
+    margin: 30;
+    display: inline-block;
+    position: relative;
+    border: 5px solid yellowgreen
+}
+.imagen_flores{
+    width: 170px;
+    height: 170px;
+    margin: 15px 17px;
+}
+figcaption{
+    position:static;
+}
+
+/*prod_arbustos*/
+.menu_prod ul li {
+    display: inline-block;
+    margin: 10px 80px;
+    font-size:22px;
+    padding:8px;
+    background-color: white;
+    color: black;
+}
+figure{
+    margin: 30;
+    display: inline-block;
+    position: relative;
+    border: 5px solid yellowgreen
+}
+.imagen_arb{
+    width: 170px;
+    height: 170px;
+    margin: 15px 17px;
+}
+figcaption{
+    position:static;
+}
