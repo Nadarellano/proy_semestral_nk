@@ -166,16 +166,19 @@ figcaption{
 }
 
 /*macetero_rojo*/
-div.macet_rojo img.imagen_mac{
-    float: left;
-    margin-right: 17x;
+.descrip{
+    text-align: left;
 }
-div.descrip_mac{
-    display:inline-block;
+.izquierda{
+    float:left;
+    padding-right: 10px;
+    width: 170px;
+    height: 170px;
+    margin: 15px 17px;
+    margin: 30;
+    border: 5px solid yellowgreen
 }
-#colorh2{
-    color:white;
-}
-#colorh3{
-    color:white;
-}
+
+
+
+
