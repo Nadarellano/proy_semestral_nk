@@ -223,5 +223,7 @@ figcaption{
     border: 2px solid green
 }
 #escribir_com{
-    display:inline-block
+    float:right;
+    padding-block-end: 10px;
+
 }
