@@ -168,7 +168,7 @@ figcaption{
 /*macetero_rojo*/
 .menu_prod2 ul li {
     display: inline-block;
-    margin: 10px 160px;
+    margin: 0px 160px;
     font-size:22px;
     padding:8px;
     background-color: white;
@@ -184,15 +184,24 @@ figcaption{
     position:static;
     border: 5px solid yellowgreen
 }
+#colorh1{
+    color:white;
+}
+#colorh2{
+    color:white;
+}
+#colorh4{
+    color:white;
+}
 
-/*estrellas*/
+/*Calificacion estrellas*/
 #form {
     width: 250px;
     margin: 0 auto;
     height: 50px;
   }
   #form p {
-    text-align: center;
+    text-align:center;
   }
   #form label {
     font-size: 20px;
@@ -215,15 +224,18 @@ figcaption{
     color: black;
   }
 .calificacion{
-    float:left;
-    padding-right: 700px;
+    display:inline-block;
+    padding-right: 600px;
     margin: 15px 150px;
     margin: 50;
     position:static;
     border: 2px solid green
 }
-#escribir_com{
+#coment{
     float:right;
-    padding-block-end: 10px;
-
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px 5px;
+    position:relative;
+    border: 5px solid yellowgreen
 }
