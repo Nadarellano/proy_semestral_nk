@@ -3,7 +3,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 margin: 0;
 border: 0;
 
-background-image: url("../img/cesped.jpg");
+background-image: url("../img/fondo3.jpg");
 
 }
 
@@ -238,4 +238,13 @@ figcaption{
     margin: 0px 5px;
     position:relative;
     border: 5px solid yellowgreen
+}
+
+/*carrito*/
+.carrito{
+    margin: 0px 80px;
+    display: inline-block;
+    position: relative;
+    text-decoration: underline  2px solid black;
+    padding: 5px;
 }
