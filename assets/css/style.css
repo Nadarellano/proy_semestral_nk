@@ -121,6 +121,8 @@ body{
     
     margin-top: 3rem;}
 
+    
+
 /*prod_maceteros*/
 .menu_prod ul li {
     display: inline-block;
@@ -144,6 +146,8 @@ figure{
 figcaption{
     position:static;
 }
+
+
 
 /*prod_sustratos*/
 .menu_prod ul li {
@@ -310,3 +314,4 @@ figcaption{
     position:static;
     border: 5px solid yellowgreen
 }
+
