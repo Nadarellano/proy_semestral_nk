@@ -227,5 +227,20 @@ margin-top: 3rem;}
     margin: 4em;
 }
 
-.bgnav{background-image: url("../img/cesped.jpg");}
+}
 
+footer div p { font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: bolder;}
+
+
+.footpadd{
+    padding: 2rem;
+}
+
+.footpaddd{
+    padding: 1rem;
+}
+
+.iniciosesion{
+    padding: 5rem;
+}
