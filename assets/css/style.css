@@ -141,22 +141,11 @@ body{
 
 
 /*macetero_rojo*/
-.menu_prod2 ul li {
-    display: inline-block;
-    margin: 0px 160px;
-    font-size:22px;
-    padding:8px;
-    background-color: white;
-    color: black;
-}
-.izquierda{
-    float:left;
-    width: 170px;
-    height: 170px;
-    padding:15px;
-    margin: 15px 150px;
-    margin: 50;
-    position:static;
+.img-rounded{
+    float:right;
+    margin: 20px 20px;
+    width: 300px;
+    height: 300px;
     border: 5px solid yellowgreen
 }
 #colorh1{
@@ -168,52 +157,39 @@ body{
 #colorh4{
     color:white;
 }
+@media (min-width: 576px){
+.col-sm2{
+    float:left;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
 
-/*Calificacion estrellas*/
-#form {
-    width: 250px;
-    margin: 0 auto;
-    height: 50px;
-  }
-  #form p {
-    text-align:center;
-  }
-  #form label {
-    font-size: 20px;
-  }
-  input[type="radio"] {
-    display: none;
-  }
-  label {
-    color: white;
-  }
-  .clasificacion {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-  }
-  label:hover,
-  label:hover ~ label {
-    color: black;
-  }
-  input[type="radio"]:checked ~ label {
-    color: black;
-  }
-.calificacion{
-    display:inline-block;
-    padding-right: 600px;
-    margin: 15px 150px;
-    margin: 50;
-    position:static;
-    border: 2px solid green
-}
-#coment{
-    float:right;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0px 5px;
+@media (min-width: 576px){
+    .col-sm{
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+.input-group{
     position:relative;
-    border: 5px solid yellowgreen
+    display:flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
 }
+
+#suscripcion{
+    color:brown;
+}
+
+#but_sus{
+    background-color: beige;
+    text-align: center;
+    padding:5px; 
+    color:#222; 
+    font-size: 14px; margin: 10px;
+
 
 /*carrito*/
 .carrito{
