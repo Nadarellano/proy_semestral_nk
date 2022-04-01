@@ -169,7 +169,7 @@ body{
     float:left;
     flex-basis: 0;
     flex-grow: 1;
-    max-width: 100%;
+    max-width: 100%;}
 }
 
 @media (min-width: 576px){
@@ -195,7 +195,7 @@ body{
     text-align: center;
     padding:5px; 
     color:#222; 
-    font-size: 14px; margin: 10px;
+    font-size: 14px; margin: 10px; }
 
 
 /*carrito*/
@@ -226,3 +226,6 @@ margin-top: 3rem;}
 .registro{
     margin: 4em;
 }
+
+.bgnav{background-image: url("../img/cesped.jpg");}
+
