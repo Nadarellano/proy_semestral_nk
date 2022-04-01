@@ -128,17 +128,24 @@ body{
 
 /*productos*/
 
+.card-title{
+    text-align: center;
+
+}
 .card-deck{
     display: flex;
 }
+.card-text{
+    text-align: center;
+}
 .card-body{
     background-color: antiquewhite;
+    margin: 5px 5px;
+    font-size: 14px; margin: 10px;
 }
-.text-muted{
-    text-align:left;
-    
+.card-footer{
+    text-align: center;
 }
-
 
 /*macetero_rojo*/
 .img-rounded{
