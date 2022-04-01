@@ -122,103 +122,23 @@ body{
     margin-top: 3rem;}
 
 
-/*prod_maceteros*/
-.menu_prod ul li {
-    display: inline-block;
-    margin: 10px 80px;
-    font-size:22px;
-    padding:8px;
-    background-color: white;
-    color: black;
+.container {
+    width: 100%;
     }
-figure{
-    margin: 30;
-    display: inline-block;
-    position: relative;
-    border: 5px solid yellowgreen
+
+/*productos*/
+
+.card-deck{
+    display: flex;
 }
-.imagen_mac{
-    width: 170px;
-    height: 170px;
-    margin: 15px 17px;
+.card-body{
+    background-color: antiquewhite;
 }
-figcaption{
-    position:static;
+.text-muted{
+    text-align:left;
+    
 }
 
-
-
-/*prod_sustratos*/
-.menu_prod ul li {
-    display: inline-block;
-    margin: 10px 80px;
-    font-size:22px;
-    padding:8px;
-    background-color: white;
-    color: black;
-    }
-figure{
-    margin: 30;
-    display: inline-block;
-    position: relative;
-    border: 5px solid yellowgreen
-}
-.imagen_sust{
-    width: 170px;
-    height: 170px;
-    margin: 15px 17px;
-}
-figcaption{
-    position:static;
-}
-
-/*prod_flores*/
-.menu_prod ul li {
-    display: inline-block;
-    margin: 10px 80px;
-    font-size:22px;
-    padding:8px;
-    background-color: white;
-    color: black;
-}
-figure{
-    margin: 30;
-    display: inline-block;
-    position: relative;
-    border: 5px solid yellowgreen
-}
-.imagen_flores{
-    width: 170px;
-    height: 170px;
-    margin: 15px 17px;
-}
-figcaption{
-    position:static;
-}
-
-/*prod_arbustos*/
-.menu_prod ul li {
-    display: inline-block;
-    margin: 10px 80px;
-    font-size:22px;
-    padding:8px;
-    background-color: white;
-    color: black;
-}
-figure{
-    margin: 30;
-    display: inline-block;
-    position: relative;
-    border: 5px solid yellowgreen
-}
-.imagen_arb{
-    width: 170px;
-    height: 170px;
-    margin: 15px 17px;
-}
-figcaption{
-    position:static;
-}
 
 /*macetero_rojo*/
 .menu_prod2 ul li {
