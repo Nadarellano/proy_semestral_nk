@@ -7,6 +7,7 @@ body{
     
     }
     
+
     
     .menu{ display: inline-block;
     list-style: none;
@@ -119,6 +120,7 @@ body{
     #botonproducto {border-bottom: 4rem;
     text-align: right;
     
+    
     margin-top: 3rem;}
 
 
@@ -225,6 +227,8 @@ margin-top: 3rem;}
 
 .registro{
     margin: 4em;
+    margin-top: auto;
+    padding-top: 0%;
 }
 
 }
@@ -234,13 +238,30 @@ font-weight: bolder;}
 
 
 .footpadd{
-    padding: 2rem;
+    padding: auto;
+    padding-top: 5em;
+    padding-bottom: 0;
 }
 
 .footpaddd{
     padding: 1rem;
+    
 }
 
 .iniciosesion{
-    padding: 5rem;
+    padding: auto;
+    padding-top: 5rem;
+    margin-top: 5rem;
+    padding-right: 10rem;
+    margin: auto;
+}
+
+.container img {
+    width: 100%;
+    }
+
+
+.nosotros {
+    text-align:center;
+    font-family:sans-serif;
 }
