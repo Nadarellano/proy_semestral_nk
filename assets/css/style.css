@@ -273,8 +273,14 @@ font-weight: bolder;}
 .credit-card-div .small-font { font-size:9px; }
 .credit-card-div .pad-adjust { padding-top:10px; }
 
+<<<<<<< HEAD
 .seguimiento{
     font-family: sans-serif;
     font-size: medium;
     font-weight: bold;
+=======
+.letra_link{
+    color:white;
+    text-decoration: none;
+>>>>>>> 5a162750cb80a99e6d8eaa5e5ec84d5a26461de8
 }
