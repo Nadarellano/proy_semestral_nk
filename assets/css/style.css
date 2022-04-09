@@ -272,3 +272,9 @@ font-weight: bolder;}
 .credit-card-div img { padding-top:30px; }
 .credit-card-div .small-font { font-size:9px; }
 .credit-card-div .pad-adjust { padding-top:10px; }
+
+.seguimiento{
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: bold;
+}
