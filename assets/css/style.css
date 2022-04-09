@@ -7,6 +7,7 @@ body{
     
     }
     
+
     
     .menu{ display: inline-block;
     list-style: none;
@@ -119,6 +120,7 @@ body{
     #botonproducto {border-bottom: 4rem;
     text-align: right;
     
+    
     margin-top: 3rem;}
 
 
@@ -147,10 +149,10 @@ body{
     text-align: center;
 }
 
-/*macetero_rojo*/
+/*imagenes productos*/
 .img-rounded{
     float:right;
-    margin: 20px 20px;
+    margin: auto;
     width: 300px;
     height: 300px;
     border: 5px solid yellowgreen
@@ -225,6 +227,8 @@ margin-top: 3rem;}
 
 .registro{
     margin: 4em;
+    margin-top: auto;
+    padding-top: 0%;
 }
 
 }
@@ -234,13 +238,49 @@ font-weight: bolder;}
 
 
 .footpadd{
-    padding: 2rem;
+    padding: auto;
+    padding-top: 5em;
+    padding-bottom: 0;
 }
 
 .footpaddd{
     padding: 1rem;
+    
 }
 
 .iniciosesion{
-    padding: 5rem;
+    padding: auto;
+    padding-top: 5rem;
+    margin-top: 5rem;
+    padding-right: 10rem;
+    margin: auto;
+}
+
+.nos img {
+    width: 100%;
+    }
+
+
+.nosotros {
+    text-align:center;
+    font-family:sans-serif;
+}
+
+/*pago*/
+
+.credit-card-div  span { padding-top:10px; }
+.credit-card-div img { padding-top:30px; }
+.credit-card-div .small-font { font-size:9px; }
+.credit-card-div .pad-adjust { padding-top:10px; }
+
+<<<<<<< HEAD
+.seguimiento{
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: bold;
+=======
+.letra_link{
+    color:white;
+    text-decoration: none;
+>>>>>>> 5a162750cb80a99e6d8eaa5e5ec84d5a26461de8
 }
