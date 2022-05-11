@@ -117,11 +117,16 @@ body{
         padding: 4rem;
     }
     
-    #botonproducto {border-bottom: 4rem;
-    text-align: right;
-    
-    
-    margin-top: 3rem;}
+#botonproducto {
+        border-bottom: 4rem;
+        text-align: right;
+        margin-top: 3rem;
+}
+
+.prod{
+    color:black;
+    text-decoration: none;
+}
 
 
 .container {
@@ -219,10 +224,16 @@ body{
     border: 5px solid yellowgreen
 }
 
-#botonproducto {border-bottom: 4rem;
-text-align: right;
+#botonproducto {
+    border-bottom: 4rem;
+    margin-right: 3rem;
+    color:white;
+    border: 2px solid greenyellow;
+    padding: .7em;
+    background-color: white;
+    text-decoration: black;;
 
-margin-top: 3rem;}
+}
 
 
 .registro{
@@ -273,14 +284,14 @@ font-weight: bolder;}
 .credit-card-div .small-font { font-size:9px; }
 .credit-card-div .pad-adjust { padding-top:10px; }
 
-<<<<<<< HEAD
 .seguimiento{
     font-family: sans-serif;
     font-size: medium;
     font-weight: bold;
-=======
-.letra_link{
-    color:white;
-    text-decoration: none;
->>>>>>> 5a162750cb80a99e6d8eaa5e5ec84d5a26461de8
+}
+
+    
+#letra_link{
+color:white;
+text-decoration: none;
 }
