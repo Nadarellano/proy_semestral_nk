@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Crete+Round:ital@0;1&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <header> 
@@ -31,25 +32,28 @@
                     <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="mailto:viveverde@mail.cl">Escríbenos</a>
+                    <a class="nav-link active"  href="mailto:viveverde@mail.cl">Escríbenos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    <a class="nav-link active" href="nosotros.html">Nosotros</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="seguimiento.html">Sigue tu compra</a>
+                     <a class="nav-link active"  href="seguimiento.html">Sigue tu compra</a>
                   </li>
                 </ul>
                 
                 <div class="d-flex">
-                    <input type="text" id="formulario" class="form-control my-2"   placeholder="Ingresa el producto">
-                    <button class="btn btn-info mb-2" id="boton">Buscar</button>
+                    <div class="box">
+                        <div class="container-4">
+                          <input type="search" id="search" placeholder="Buscar en Vive Verde..." />
+                          <button class="icon"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class ="footpaddd">
-                    <button class= "btn btn-primary"  type="btn btn-outline-success btn-lg btn-block"><a href="registro.html">Inicio / Registro</a></button>
-                    
-            </div>
+                <div class="d-flex">
+                   <a href="registro.html" class="nav-link active" id="in">Ingreso - Registro</a>
+                </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end footpaddd">
                 
                 <button class= "btn btn-success"  type="btn btn-outline-success btn-lg btn-block"><a href="carrito.html"><img src="assets/img/cesta-de-la-compra.png" alt=""></a></button>
@@ -59,18 +63,14 @@
           </nav>
 
         </header>
-
     <div class="container">
- 
       <div class= "row align-items-center" >
         <div class="col-lg-5" >
             <div class="font">
                 <h2 id="vive">VIVE</h2>
                 <h1 id="verde"> VERDE</h1>
                 <h5 id="ins">INSUMOS DE JARDINERIA</h5>
-            </div>
-            <div>
-                <button type="button"  id="botonproducto" class="btn btn btn-block"><a href="#menuproductos"><h2 class="prod">PRODUCTOS</h2></a></button>
+                <button type="button"  id="botonproducto" class="btn btn btn-block"><a href="#menuproductos" class="card-link1"><h2  class="card-link1">PRODUCTOS</h2></a></button>
             </div>        
         </div>
         <div class="col-lg-1">
@@ -85,8 +85,6 @@
                             <img src="assets/img/poppy.jpg" class="d-block w-100" alt="...">  
                                 
                         </div>
-                            <a class="carousel-item"  ><img src="assets/img/pink-daisies.jpg" class="d-block w-100" alt="..."></a>
-                            <h5>Flores rosadas. La magia de la primavera</h5>
                 </div>
             </div>
         </div>
@@ -94,7 +92,7 @@
     </div>
 
     <article>
-        <h5>Bienvenidos a Vive Verde, en nuestra tienda encontrarás todo lo que necesitas para tu jardín y huerto.</h5>
+        <h5 id="textindex">Bienvenidos a Vive Verde, en nuestra tienda encontrarás todo lo que necesitas para tu jardín y huerto.</h5>
     </article>
     <section id="menuproductos"  >
         <div class="container">
@@ -146,4 +144,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="/components/pantallaInicio.js"></script>
 </body>
-</html>
