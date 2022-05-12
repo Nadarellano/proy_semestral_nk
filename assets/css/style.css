@@ -1,3 +1,4 @@
+
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
@@ -78,7 +79,13 @@ body{
 
 #in {
     color:brown;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#carro{
+    color:brown;
+    font-size: 2px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -197,15 +204,26 @@ body{
     
 #botonproducto {
         border-bottom: 4rem;
-        text-align: right;
-        margin-top: 3rem;
+        text-align: center;
+        margin-top: 2rem;
         color:white;
         border: 2px solid greenyellow;
-        padding: .7em;
-        background-color: white;
-        text-decoration: black;;
+        padding: .4em;
+        background-color: darkgreen;
+        padding: 1px 5px;
+        align-items: center;
 }
 
+.card-link1{
+    text-decoration: none;
+    color:white;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
 
 #vive{
     color:brown;
@@ -229,9 +247,26 @@ body{
     text-decoration: none;
 }
 
+#natu{
+    border-radius: 24px;
+    float:right;
+    margin: auto;
+    width: 250px;
+    height: 360px;
+}
+
+#pop{
+    border-radius: 24px;
+    float:right;
+    margin: auto;
+    width: 250px;
+    height: 360px;
+}
+
+
 #textindex{
-    color:black;
-    font-size: 22px;
+    color:darkgreen;
+    font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 1px 1px #999;
 
@@ -266,20 +301,13 @@ body{
 .card-link{
     text-decoration: none;
     color:brown;
-    font-size: 30px;
+    font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     align-items: center;
     justify-content: center;
 }
 
-.card-link1{
-    text-decoration: none;
-    color:darkgreen;
-    font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    align-items: center;
-    justify-content: center;
-}
+
 
 /*imagenes productos*/
 .img-rounded{
