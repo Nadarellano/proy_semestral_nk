@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicongarden.png">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Vive Verde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Crete+Round:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/stylevalidate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+<body>
+
+
+    <section class="centrar">
+        <div>
+            <h2 id="titulo"> Formulario de Registro </h2>
+        </div>
+        <br>
+
+        <form class="row g-4 needs-validation" action="" novalidate action="procesar.php" enctype="multipart/form-data"
+            method="post" NAME="Nuevo_usuario" id="form">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nombre completo <span>(requerido)</span></label>
+                <input type="text" class="form-control" placeholder="Ej: Aurora del Carmen Acuña Parra" id="name"
+                    name="name">
+                <div class="alert alert-danger hide" role="alert" name="nameAlert">
+                    Debes completar el nombre
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="txt_rut" class="form-label">Rut <span>(requerido)</span></label>
+                <input type="text" name="txt_rut" class="form-control" placeholder="Ej: 11111111-1" id="txt_rut">
+                <!-- <div class="alert alert-danger hide" role="alert" name="rutAlert"> -->
+                    <!-- Debes completar el rut -->
+                    <p class="text" id="msgerror"></p>
+                </div>
+            <div class="col-md-6">
+                
+                    <label for="email" class="form-label">Email <span>(requerido)</span></label>
+                    <input type="email" name="email" class="form-control" placeholder="Ej: nombre@mail.com" id="email">
+                <div class="alert alert-danger hide" role="alert" name="emailAlert">
+                    Debes completar el email
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="password" class="form-label">Contraseña <span>(requerido)</span></label>
+                <input type="password" class="form-control" placeholder="Ingrese una contraseña" id="password"
+                    name="password">
+                <div class="alert alert-danger hide" role="alert" name="passwordAlert">
+                    Debes ingresar una contraseña
+                </div>´
+            </div>
+            <div class="col-md-6">
+                <label for="numberPhone" class="form-label">Número de teléfono <span>(opcional)</span></label>
+                <input type="text" name="numberPhone" class="form-control" placeholder="Ej: 930154872" id="numberPhone">
+            </div>
+
+            <div class="col-md-6">
+                <label for="city" class="form-label">Ciudad <span>(requerido)</span></label>
+                <input type="text" name="city" class="form-control" placeholder="Ej: Chillán" id="city">
+                <div class="alert alert-danger hide" role="alert" name="cityAlert">
+                    Debes completar la ciudad
+                </div>
+            </div>
+
+           <br> </br>
+           <br> </br>
+
+            <div class="col-md-12">
+                <label for="message" class="form-label">Cuéntanos ¿en qué te gustaría participar en la ONG?
+                    <span>(requerido)</span></label>
+                <textarea name="message" cols="50" rows="05" type="text" class="form-control"
+                    placeholder="Ej: Me gustaría participar en..." id="message"></textarea>
+                <div class="alert alert-danger hide" role="alert" name="messageAlert">
+                    Debes completar el mensaje
+                </div>
+              
+                  
+            </div>
+
+            
+            
+           
+            <div class="col-md-6">
+
+                <input type="submit"  id="btnvalida" class="form-control btn btn-warning" id="sendform1"  value="ENVIAR">
+                
+
+            </div>
+            <div class="col-md-6">
+                <input type="reset" class="form-control btn btn-warning" value="LIMPIAR">
+            </div>
+        </form>
+    </section>
+
+
+    
+
+    <footer>
+
+        <br>
+        <div class="footpadd">
+            <a href="https://whatsapp.com"><img
+                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-whatsapp-whatsapp-flatart-icons-outline-flatarticons.png" /></a>
+            <a href="https://twitter.com"><img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" /></a>
+            <a href="https://www.instagram.com"><img
+                    src="https://img.icons8.com/ios/50/000000/instagram-new--v1.png" /></a>
+            <p><i>"Vive Verde". Todos los derechos reservados.</i></p>
+        </div>
+
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="app.js"></script>
+ 
+</body>
+
+</html>
