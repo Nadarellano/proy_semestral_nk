@@ -82,6 +82,11 @@ body{
     font-size: 18px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+#reg {
+    color:brown;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 #carro{
     color:brown;
@@ -203,15 +208,14 @@ body{
     }
     
 #botonproducto {
-        border-bottom: 4rem;
-        text-align: center;
+        border-bottom: rem;
+        text-align: right;
         margin-top: 2rem;
         color:white;
         border: 2px solid greenyellow;
-        padding: .4em;
         background-color: darkgreen;
-        padding: 1px 5px;
-        align-items: center;
+        padding: 1px 2px;
+        align-items:flex-end;
 }
 
 .card-link1{
@@ -219,8 +223,9 @@ body{
     color:white;
     font-size: 25px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
+    padding: auto;
     
     
 }
@@ -269,6 +274,7 @@ body{
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 1px 1px #999;
+    text-align: justify;
 
 }
 
