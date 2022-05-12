@@ -154,6 +154,7 @@ body{
     text-align: center;
 }
 
+
 /*imagenes productos*/
 .img-rounded{
     float:right;
@@ -171,7 +172,7 @@ body{
 #colorh4{
     color:white;
 }
-@media (min-width: 576px){
+@media (min-width: 250px){
 .col-sm2{
     float:left;
     flex-basis: 0;
@@ -179,7 +180,7 @@ body{
     max-width: 100%;}
 }
 
-@media (min-width: 576px){
+@media (min-width: 250px){
     .col-sm{
         flex-basis: 0;
         flex-grow: 1;
