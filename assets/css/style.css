@@ -94,123 +94,124 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-    .nav-item{
-        color:white;
-        font-size: 18px;
+.nav-item{
+    color:white;
+    font-size: 18px;
 
 
-    }
-    .menu{ display: inline-block;
+}
+.menu{ display: inline-block;
+list-style: none;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+
+}
+
+body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top:  1rem;
+
+}
+
+header{
+    padding: 2 rem ;
+    
+}
+
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button img {
+    width: 2rem;
+}
+
+.menu ul{
     list-style: none;
-    }
+}
+.menu ul li {
+    display: inline-block;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 0.5rem  1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
     
-    header a {
-        color: white;
-        text-decoration: none;
-    
-    }
-    
-    body {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top:  1rem;
-    
-    }
-    
-    header{
-        padding: 2 rem ;
-       
-    }
-    
-    .logo{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    nav button img {
-        width: 2rem;
-    }
-    
-    .menu ul{
-        list-style: none;
-    }
-    .menu ul li {
-        display: inline-block;
-    }
-    
-    .menu ul li a {
-        display: block;
-        padding: 0.5rem  1rem;
-        transition: all 0.4s linear;
-        border-radius: 5px;
-      
-    }
-    
-    nav a:hover {
-        background-color:lightgreen;
-        border-radius: 1rem;
-    }
-    
-    .menu{
-        padding: 1rem;
-        justify-items: flex;
-    }
-    
-    footer{
-        padding: 4rem;
-        text-align: center;
-        display: inline;
-        align-items: center;
-    }
-    
-    
-    #imagen{
-            width: 500px;
-            padding: 2rem;
-        }
-    
-    
-    section div {display:inline;}
-    
-    .principal {
-        display:flex;
-        justify-content: space-between;
-    
-    }
-    .elementoprincipal{
-        text-align: right;
+}
+
+nav a:hover {
+    background-color:lightgreen;
+    border-radius: 1rem;
+}
+
+.menu{
+    padding: 1rem;
+    justify-items: flex;
+}
+
+footer{
+    padding: 4rem;
+    text-align: center;
+    display: inline;
+    align-items: center;
+}
+
+
+#imagen{
+        width: 500px;
         padding: 2rem;
     }
-    #canasta{
-        padding:unset;
-    }
-    
-    
-    .font{
-        font-family: 'Crete Round', serif;
-        text-align: right;
-        align-items: center;
-    }
 
-    
-    nav {
-        margin-bottom: 2rem;
-        margin-top: 0.5rem;}
-  
-    .tamanologo{ width: 6rem ;
-    margin: 0%;}
-    
-    article h5 {
-        font-family: 'Crete Round', serif;
-        text-align: center;
-        padding: 4rem;
-    }
+
+section div {display:inline;}
+
+.principal {
+    display:flex;
+    justify-content: space-between;
+
+}
+.elementoprincipal{
+    text-align: right;
+    padding: 2rem;
+}
+#canasta{
+    padding:unset;
+}
+
+
+.font{
+    font-family: 'Crete Round', serif;
+    text-align: right;
+    align-items: center;
+}
+
+
+nav {
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;}
+
+.tamanologo{ width: 6rem ;
+margin: 0%;}
+
+article h5 {
+    font-family: 'Crete Round', serif;
+    text-align: center;
+    padding: 4rem;
+}
     
 #botonproducto {
         border-bottom: rem;
         text-align: right;
-        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
         color:white;
         border: 2px solid greenyellow;
         background-color: darkgreen;
@@ -256,25 +257,31 @@ body{
     border-radius: 24px;
     float:right;
     margin: auto;
-    width: 250px;
-    height: 300px;
+    width: 240px;
+    height: 250px;
+    display:flexbox;
+    margin-top: auto;
 }
 
 #pop{
     border-radius: 24px;
     float:right;
     margin: auto;
-    width: 250px;
-    height: 300px;
+    width: 240px;
+    height: 250px;
+    display:flexbox;
+    margin-top: auto;
+
 }
 
 
 #textindex{
     color:darkgreen;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 1px 1px #999;
-    text-align: justify;
+    text-align: center;
+    margin-bottom: 0%;
 
 }
 
