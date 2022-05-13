@@ -42,8 +42,6 @@ $(document).ready(function () {
             },
         },
 
-
-
         messages: {
             name: {
                 minlength: jQuery.validator.format("Por favor, al menos {0} caracteres son necesarios"),
@@ -148,9 +146,5 @@ $(document).ready(function () {
         /* geolocation IS NOT available */
         console.log("not available")
     }
-
-
-
-
 
 });
