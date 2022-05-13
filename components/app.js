@@ -40,8 +40,6 @@ $(document).ready(function () {
             },
         },
 
-
-
         messages: {
             name: {
                 minlength: jQuery.validator.format("Por favor, al menos {0} caracteres son necesarios"),
@@ -126,6 +124,29 @@ $(document).ready(function () {
         console.log("Formulario enviado")
         event.preventDefault();
     });
+
+    if('geolocation' in navigator) {
+        /* geolocation is available */
+        console.log("available")
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
+            $.get(`https://api.weatherapi.com/v1/current.json?q=${position.coords.latitude},${position.coords.longitude}&key=${weatherApiKey}`, 
+            function(data) {
+                console.log(data)
+                $('#weather').html(`
+                    <div class="weather">
+                        <p>El clima en ${data.location.country}, ${data.location.region}</p>
+                        <p><img src="https:${data.current.condition.icon}"/> ${data.current.temp_c}°C</p>
+                    </div>
+                `);
+            })
+        });
+    } else {
+        /* geolocation IS NOT available */
+        console.log("not available")
+    }
+
 
 
 });
