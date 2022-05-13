@@ -494,3 +494,11 @@ text-decoration: none;
     text-decoration: none;
 }
 
+.weather {
+    width: 306px;
+    background-color: #eaeaea;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+}
