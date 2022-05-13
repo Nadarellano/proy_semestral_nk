@@ -1,4 +1,3 @@
-
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
@@ -6,284 +5,124 @@ body{
     background-image: url("../img/spring-floral-border-background.jpg");
     background-color: rgb(39,174,96);
     
-}
-
-.container-4{
-overflow: hidden;
-width: 335px;
-vertical-align: middle;
-white-space: nowrap;
-}
-.container-4 input#search{
-width: 300px;
-height: 50px;
-background: whitesmoke;
-border: none;
-font-size: 10pt;
-float: left;
-color: darkgreen;
-padding-left: 15px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-}
-
-.container-4 input#search::-webkit-input-placeholder {
-color: #65737e;
-}
-
-.container-4 input#search:-moz-placeholder { /* Firefox 18- */
-color: #65737e;  
-}
-
-.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
-color: #65737e;  
-}
-
-.container-4 input#search:-ms-input-placeholder {  
-color: #65737e;  
-}
-
-.container-4 button.icon{
--webkit-border-top-right-radius: 5px;
--webkit-border-bottom-right-radius: 5px;
--moz-border-radius-topright: 5px;
--moz-border-radius-bottomright: 5px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
-
-border: none;
-background: whitesmoke;
-height: 50px;
-width: 50px;
-color: darkgreen;
-opacity: 0;
-font-size: 10pt;
-
--webkit-transition: all .55s ease;
--moz-transition: all .55s ease;
--ms-transition: all .55s ease;
--o-transition: all .55s ease;
-transition: all .55s ease;
-}
-
-.container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
-outline: none;
-opacity: 1;
-margin-left: -50px;
-}
-
-.container-4:hover button.icon:hover{
-background: white;
-}
-
-#in {
-    color:brown;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-#reg {
-    color:brown;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#carro{
-    color:brown;
-    font-size: 2px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.nav-item{
-    color:white;
-    font-size: 18px;
-
-
-}
-.menu{ display: inline-block;
-list-style: none;
-}
-
-header a {
-    color: white;
-    text-decoration: none;
-
-}
-
-body {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top:  1rem;
-
-}
-
-header{
-    padding: 2 rem ;
+    }
     
-}
 
-.logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav button img {
-    width: 2rem;
-}
-
-.menu ul{
+    
+    .menu{ display: inline-block;
     list-style: none;
-}
-.menu ul li {
-    display: inline-block;
-}
-
-.menu ul li a {
-    display: block;
-    padding: 0.5rem  1rem;
-    transition: all 0.4s linear;
-    border-radius: 5px;
+    }
     
-}
-
-nav a:hover {
-    background-color:lightgreen;
-    border-radius: 1rem;
-}
-
-.menu{
-    padding: 1rem;
-    justify-items: flex;
-}
-
-footer{
-    padding: 4rem;
-    text-align: center;
-    display: inline;
-    align-items: center;
-}
-
-
-#imagen{
-        width: 500px;
+    header a {
+        color: white;
+        text-decoration: none;
+    
+    }
+    
+    body {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top:  1rem;
+    
+    }
+    
+    header{
+        padding: 2 rem ;
+       
+    }
+    
+    .logo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    nav button img {
+        width: 2rem;
+    }
+    
+    .menu ul{
+        list-style: none;
+    }
+    .menu ul li {
+        display: inline-block;
+    }
+    
+    .menu ul li a {
+        display: block;
+        padding: 0.5rem  1rem;
+        transition: all 0.4s linear;
+        border-radius: 5px;
+      
+    }
+    
+    nav a:hover {
+        background-color:lightgreen;
+        border-radius: 1rem;
+    }
+    
+    .menu{
+        padding: 1rem;
+        justify-items: flex;
+    }
+    
+    footer{
+        padding: 4rem;
+        
+        text-align: center;
+        display: inline;
+        align-items: center;
+    }
+    
+    
+    #imagen{
+            width: 500px;
+            padding: 2rem;
+        }
+    
+    
+    section div {display:inline;}
+    
+    .principal {
+        display:flex;
+        justify-content: space-between;
+    
+    }
+    .elementoprincipal{
+        text-align: right;
         padding: 2rem;
     }
-
-
-section div {display:inline;}
-
-.principal {
-    display:flex;
-    justify-content: space-between;
-
-}
-.elementoprincipal{
-    text-align: right;
-    padding: 2rem;
-}
-#canasta{
-    padding:unset;
-}
-
-
-.font{
-    font-family: 'Crete Round', serif;
-    text-align: right;
-    align-items: center;
-}
-
-
-nav {
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;}
-
-.tamanologo{ width: 6rem ;
-margin: 0%;}
-
-article h5 {
-    font-family: 'Crete Round', serif;
-    text-align: center;
-    padding: 4rem;
-}
+    #canasta{
+        padding:unset;
+    }
     
-#botonproducto {
-        border-bottom: rem;
+    
+    .font{
+        font-family: 'Crete Round', serif;
         text-align: right;
+        align-items: center;
+    }
+
+    
+    nav {
         margin-bottom: 2rem;
-        margin-top: 1rem;
-        color:white;
-        border: 2px solid greenyellow;
-        background-color: darkgreen;
-        padding: 1px 2px;
-        align-items:flex-end;
-}
-
-.card-link1{
-    text-decoration: none;
-    color:white;
-    font-size: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    align-items:center;
-    justify-content:center;
-    padding: auto;
+        margin-top: 0.5rem;}
+  
+    .tamanologo{ width: 6rem ;
+    margin: 0%;}
+    
+    article h5 {
+        font-family: 'Crete Round', serif;
+        text-align: center;
+        padding: 4rem;
+    }
+    
+    #botonproducto {border-bottom: 4rem;
+    text-align: right;
     
     
-}
+    margin-top: 3rem;}
 
-#vive{
-    color:brown;
-    font-size: 55px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#verde{
-    color:darkgreen;
-    font-size: 85px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-#ins{
-    color:brown;
-    font-size: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.prod{
-    color:black;
-    text-decoration: none;
-}
-
-#natu{
-    border-radius: 24px;
-    float:right;
-    margin: auto;
-    width: 240px;
-    height: 250px;
-    display:flexbox;
-    margin-top: auto;
-}
-
-#pop{
-    border-radius: 24px;
-    float:right;
-    margin: auto;
-    width: 240px;
-    height: 250px;
-    display:flexbox;
-    margin-top: auto;
-
-}
-
-
-#textindex{
-    color:darkgreen;
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px #999;
-    text-align: center;
-    margin-bottom: 0%;
-
-}
 
 .container {
     width: 100%;
@@ -293,7 +132,6 @@ article h5 {
 
 .card-title{
     text-align: center;
-    text-decoration: none;
 
 }
 .card-deck{
@@ -311,39 +149,14 @@ article h5 {
     text-align: center;
 }
 
-.card-link{
-    text-decoration: none;
-    color:brown;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
 /*imagenes productos*/
 .img-rounded{
     float:right;
     margin: auto;
     width: 300px;
     height: 300px;
-    border: 5px solid yellowgreen;
-    transition: transform .2s;
+    border: 5px solid yellowgreen
 }
-
-.img-rounded:hover{
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.5); 
-    transform: scale(1.5); 
-
-}
-
-
-
-
-
 #colorh1{
     color:white;
 }
@@ -353,7 +166,7 @@ article h5 {
 #colorh4{
     color:white;
 }
-@media (min-width: 250px){
+@media (min-width: 576px){
 .col-sm2{
     float:left;
     flex-basis: 0;
@@ -361,7 +174,7 @@ article h5 {
     max-width: 100%;}
 }
 
-@media (min-width: 250px){
+@media (min-width: 576px){
     .col-sm{
         flex-basis: 0;
         flex-grow: 1;
@@ -405,6 +218,11 @@ article h5 {
     position:static;
     border: 5px solid yellowgreen
 }
+
+#botonproducto {border-bottom: 4rem;
+text-align: right;
+
+margin-top: 3rem;}
 
 
 .registro{
@@ -460,31 +278,8 @@ font-weight: bolder;}
     font-size: medium;
     font-weight: bold;
 }
+.letra_link{
+    color:white;
+    text-decoration: none;}
 
-    
-#letra_link{
-color:white;
-text-decoration: none;
-}
 
-.somos{
-    color:darkgreen;
-    font-size: 20px;
-    text-align:justify;
-}
-
-#cact{
-    float:right;
-    margin: auto;
-    width: 300px;
-    height: 300px;
-    border: 5px solid yellowgreen;
-}
-
-.comment{
-    color:yellowgreen;
-    font-size: 20px;
-    text-align: center;
-    background-color: #222;
-
-}
