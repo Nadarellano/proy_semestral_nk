@@ -76,6 +76,12 @@ $(document).ready(function () {
                 minlength: jQuery.validator.format("Por favor, al menos {0} caracteres son necesarios"),
 
             },
+            numS: {
+                required: "Este campo es requerido",
+                minlength: jQuery.validator.format("Por favor, al menos {0} caracteres son necesarios"),
+                number: "Por favor ingresa un número válido",
+
+            },
         }
 
     });

@@ -8,12 +8,10 @@ $(document).ready(function() {
             })
           ],
           view: new ol.View({
-            center: ol.proj.fromLonLat([-70.65756761617249,-33.4471033392087]),
+            center: ol.proj.fromLonLat([-70.71562202641871,-32.73890476596692]),
             zoom: 17
           
           })
           
         });
 });
-
-  
