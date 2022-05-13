@@ -1,7 +1,9 @@
-const weatherApiKey = "63920dae9a324903aaf234234222904";
+const weatherApiKey = "dc46d389e0ac4b26a94114800221305";
 
 $(document).ready(function () {
 
+
+    // console.log("FUNCIONA")
     $("#form").validate({
         rules: {
             name: {
@@ -115,9 +117,7 @@ $(document).ready(function () {
 
     $("#msgerror").css("color", "#FF0000");
 
-
-
-
+    $("#msgerror").css("color", "#FF0000");
 
 
     $('#form').submit(function (event) {
@@ -146,7 +146,5 @@ $(document).ready(function () {
         /* geolocation IS NOT available */
         console.log("not available")
     }
-
-
 
 });
