@@ -34,6 +34,13 @@ $(document).ready(function () {
                 required: true,
                 minlength: 30
             },
+            numS:
+            {
+                required: true,
+                minlength: 9,
+                number: true
+            },
+
             password:
             {
                 required: true,
@@ -89,7 +96,7 @@ $(document).ready(function () {
     $.validator.addMethod("formAlphanumeric", function (value, element) {
         var pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/; 
         return this.optional(element) || pattern.test(value);
-    }, "La contraseña debe y tener al entre 8 y 16 caracteres y 1 letra mayúscula y 1 letra minúscula");
+    }, "La contraseña debe tener entre 8 y 16 caracteres alfanuméricos, 1 letra mayúscula y 1 letra minúscula");
 
     var Fn = {
         // Valida el rut con su cadena completa "XXXXXXXX-X"
@@ -152,5 +159,6 @@ $(document).ready(function () {
         /* geolocation IS NOT available */
         console.log("not available")
     }
+
 
 });

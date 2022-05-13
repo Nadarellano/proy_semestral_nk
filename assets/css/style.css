@@ -517,3 +517,13 @@ text-decoration: none;
     padding: 8px;
     text-align: center;
 }
+
+
+.content-alert{
+    width:1000px;
+    margin-top:50px;
+    min-height:600px;
+    background:#fff;
+    margin:0 auto;
+    padding:20px;
+}
