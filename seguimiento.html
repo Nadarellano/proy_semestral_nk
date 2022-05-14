@@ -19,53 +19,58 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/stylevalidate.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 
 <body>
 
-    <header> 
+  <header> 
 
-        <nav class="navbar navbar-expand-lg navbar-light  ">
-            <div class="container-fluid">
-                <a class="nav-link active" aria-current="page" href="index.html"><img class ="tamanologo" src="assets/img/logogranja1.jpg"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active"  href="mailto:viveverde@mail.cl">Escríbenos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="nosotros.html">Nosotros</a>
-                  </li>
-             
-                </ul>
-                
-                <div class="d-flex">
-                    <div class="box">
-                        <div class="container-4">
-                          <input type="search" id="search" placeholder="Buscar en Vive Verde..." />
-                          <button class="icon"><i class="fa fa-search"></i></button>
-                        </div>
+    <nav class="navbar navbar-expand-lg navbar-light  ">
+        <div class="container-fluid">
+            <a class="nav-link active" aria-current="page" href="index.html"><img class ="tamanologo" src="assets/img/logogranja1.jpg"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active"  href="mailto:viveverde@mail.cl">Escríbenos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link active"  href="seguimiento.html">Sigue tu compra</a>
+              </li>
+            </ul>
+            
+            <div class="d-flex">
+                <div class="box">
+                    <div class="container-4">
+                      <input type="search" id="search" placeholder="Buscar en Vive Verde..." />
+                      <button class="icon"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
-                <br>
-                <br>
-                
-                
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end footpaddd">
-                
-                <button class="btn btn btn-block" type="button"><a href="carrito.html" class="card-link1"><img src="assets/img/carrito-de-compras.png" alt=""></a></button>
             </div>
-              </div>
+            <br>
+            <br>
+            <div class="d-flex">
+<!--                <a href="registro.html" class="nav-link active" id="in">Ingreso</a> -->
+               <a href="registrodos.html" class="nav-link active" id="reg">Registro</a>
             </div>
-          </nav>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end footpaddd">
+            
+            <button class="btn btn btn-block" type="button"><a href="carrito.html" class="card-link1"><img src="assets/img/carrito-de-compras.png" alt=""></a></button>
+        </div>
+          </div>
+        </div>
+      </nav>
 
     </header>
 
@@ -99,14 +104,19 @@
               <input type="text" name="numberPhone" class="form-control" placeholder="Ej: 45983466" id="numberPhone">
             </div>
             <div class="col-md-2"></div>
-                     
-            
+
             <div class="col-md-2"></div>
             <div class="col-md-4">
                 <input type="submit"  id="btnvalida" class="form-control btn btn-warning" id="sendform1"  value="REVISAR">
             </div>
             <div class="col-md-4">
                 <input type="reset" class="form-control btn btn-warning" value="LIMPIAR">
+            </div>
+            <div class="col-md-2"></div>
+
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <a href="seguimiento-compra.html" class="nav-link active" id="det">" Haz click aquí para ver el inicio del trayecto "</a>
             </div>
             <div class="col-md-2"></div>
         </form>
@@ -116,18 +126,20 @@
     
 
     <footer>
-
-        <br>
-        <div class="footpadd">
-            <a href="https://whatsapp.com"><img
-                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-whatsapp-whatsapp-flatart-icons-outline-flatarticons.png" /></a>
-            <a href="https://twitter.com"><img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" /></a>
-            <a href="https://www.instagram.com"><img
-                    src="https://img.icons8.com/ios/50/000000/instagram-new--v1.png" /></a>
-            <p><i>"Vive Verde". Todos los derechos reservados.</i></p>
-        </div>
-
-
+      <div class="footpadd">
+        <div>
+          <br>
+          <br>
+          <h5 id="suscripcion">"Crea tu cuenta y hazte socio de la fundación "ViveVerde" para obtener un 5% de descuento en el total de tu compra"</h5>
+          <br>
+          <a class="btn btn-primary" href="registrodos.html" role="button">Suscríbete aquí</a>
+      </div>
+      <div class = "footpadd"> 
+        <a href="https://whatsapp.com"><img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-whatsapp-whatsapp-flatart-icons-outline-flatarticons.png"/></a>
+        <a href="https://twitter.com"><img src="https://img.icons8.com/ios/50/000000/twitter--v1.png"/></a>
+        <a href="https://www.instagram.com"><img src="https://img.icons8.com/ios/50/000000/instagram-new--v1.png"/></a>
+        <p><i>"Vive Verde". Todos los derechos reservados.</i></p>
+      </div>  
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
