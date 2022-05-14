@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Crete+Round:ital@0;1&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/form.css">
 </head>
 
 <body>
@@ -53,15 +54,16 @@
                         <div class="box">
                             <div class="container-4">
                                 <input type="search" id="search" placeholder="Buscar en Vive Verde..." />
-                                <button class="icon"><i class="fa fa-search"></i></button>
+                                <button  class="icon" ><img src=" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" alt=""><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                     </div>
                     <br>
                     <br>
                     <div class="d-flex">
-                        <a href="registrodos.html" class="nav-link active" id="in">Ingreso</a>
+                       
                         <a href="registrodos.html" class="nav-link active" id="reg">Registro</a>
+                        <button onclick="document.getElementById('id01').style.display='block'" class="nav-link active buttono"">Login</button>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end footpaddd">
 
@@ -69,6 +71,36 @@
                                     src="assets/img/carrito-de-compras.png" alt=""></a></button>
                     </div>
                 </div>
+            </div>
+
+
+    
+            <div id="id01" class="modal">
+              
+              <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <img class="tamanologo"src="assets/img/logogranja1.jpg" alt="Avatar" class="avatar">
+                </div>
+            
+                <div class="container">
+                  <label for="uname"><b>Username</b></label>
+                  <input type="text" placeholder="Ingrese su email" name="uname" required>
+            
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
+                    
+        
+                  <a href="nosotros.html" class="form-control btn btn-sucess  buttono" id="welcome" type="submit">Login</a>
+                  <button type="reset" class="form-control btn btn-warning buttono" >Limpiar</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Recordar contraseña
+                  </label>
+                </div>
+            
+       
+                </div> 
+              </form>
             </div>
         </nav>
 
@@ -107,8 +139,9 @@
         </div>
     </div>
     <br>
-  <div id = weather></div>
-    <br>
+ 
+    <br> 
+    <div id = "weather"></div>
     <section id="menuproductos">
         <div class="container">
             <div class="row g-2">
@@ -180,4 +213,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="components/pantallaInicio.js"></script>
     <script src="components/app.js"></script>
+    <script src="form.js"></script>
 </body>
