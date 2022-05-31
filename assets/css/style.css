@@ -83,6 +83,11 @@ background: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 #reg {
+    color:black;
+    font-size: 18px;
+    font-family: Georgia, serif;
+}
+#log {
     color:brown;
     font-size: 18px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -215,7 +220,7 @@ article h5 {
         color:white;
         border: 2px solid greenyellow;
         background-color: darkgreen;
-        padding: 1px 2px;
+        padding: 1px 7px;
         align-items:flex-end;
 }
 
@@ -329,7 +334,7 @@ article h5 {
     margin: auto;
     width: 300px;
     height: 300px;
-    border: 5px solid yellowgreen;
+    border: 5px solid black;
     transition: transform .2s;
 }
 
