@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-        <title>{% block title %}{% endblock %} | Vive Verde</title>
+    <title>{% block title %}{% endblock %} | Vive Verde</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap" rel="stylesheet">
@@ -24,12 +24,15 @@
 
 <body>
     <header>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 921290e6f9ed38435f7908bf138a261350054d8b
     
 
         <nav class="navbar navbar-expand-lg navbar-light  ">
             <div class="container-fluid">
-                <a class="nav-link active" aria-current="page" href="index.html"><img class="tamanologo"
+                <a class="nav-link active" aria-current="page" href="index"><img class="tamanologo"
                         src="{% static 'core/img/logogranja1.jpg'%}"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -40,7 +43,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="mailto:viveverde@mail.cl">Escríbenos</a>
@@ -49,7 +52,7 @@
                             <a class="nav-link active" href="nosotros">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="datos_seguimiento.html">Sigue tu compra</a>
+                            <a class="nav-link active" href="datos_seguimiento">Sigue tu compra</a>
                         </li>
                     </ul>
 
@@ -65,7 +68,7 @@
                     <br>
                     <div class="d-flex">
                        
-                        <a href="registrodos.html" class="nav-link active" id="reg">Registro</a>
+                        <a href="registrodos" class="nav-link active" id="reg">Registro</a>
                     </div>
                     <div class="d-flex">
                         <button onclick="document.getElementById('id01').style.display='block'" class="form-control btn btn-success btn-md"">Ingresar</button>
@@ -99,7 +102,7 @@
                             <input type="password" placeholder="Ingrese su contraseña" name="psw" required>
                                 
                     
-                            <a href="nosotros.html" class="form-control btn btn-sucess  buttono" id="welcome" type="submit">Login</a>
+                            <a href="nosotros" class="form-control btn btn-sucess  buttono" id="welcome" type="submit">Login</a>
                             <button type="reset" class="form-control btn btn-warning buttono" >Limpiar</button>
                             <label>
                                 <input type="checkbox" checked="checked" name="remember"> Recordar contraseña
@@ -124,7 +127,7 @@
                 <h5 id="suscripcion">"Crea tu cuenta y hazte socio de la fundación "ViveVerde" para obtener un 5% de
                     descuento en el total de tu compra"</h5>
                 <br>
-                <a class="btn btn-primary" href="registrodos.html" role="button">Suscríbete aquí</a>
+                <a class="btn btn-primary" href="registrodos" role="button">Suscríbete aquí</a>
 
             </div>
         </div>
