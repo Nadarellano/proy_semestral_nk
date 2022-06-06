@@ -3,7 +3,7 @@ from .views import girasoles, index, carrito, nosotros, Ceratostigma, coprosma,d
 from .views import girasoles, leonotis, liliums, mac_amarillo, mac_gris,mac_negro, mac_rojo
 from .views import nandinas, pago, prod_arbustos, prod_flores, prod_maceteros,prod_sustratos, registrodos
 from .views import rosas, stenocarpus, stock, terminos_condiciones, tierra_biológica, tierra_compost, tierra_hoja
-from .views import tierra_humus, tulipanes, ubicacion_compra, veronicas, viburnum
+from .views import tierra_humus, tulipanes, ubicacion_compra, veronicas, productos_recomendados, form_datos_cliente
 
 
 
@@ -45,7 +45,8 @@ urlpatterns = [
     path('tulipanes', tulipanes, name='tulipanes'),
     path('ubicacion_compra', ubicacion_compra, name='ubicacion_compra'),
     path('veronicas', veronicas, name='veronicas'),
-    path('viburnum', viburnum, name='viburnum'),
+    path('productos_recomendados', productos_recomendados, name='productos_recomendados'),
+    path('form_datos_cliente', form_datos_cliente, name='form_datos_cliente'),
 
     
 ]
