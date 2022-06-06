@@ -1,0 +1,37 @@
+
+{% extends 'core/base.html'%}
+{% load static %}
+
+
+{% block title %}Datos_Cliente{% endblock %}
+
+
+    {% block content %}
+
+  <section class="centrar" >
+    
+   
+        <form method="post" action ="" id="formulario"   >
+            {% csrf_token %}
+            <div class="form-group row col-md-6" >
+            {{ form.as_table}}
+            </div>
+
+           <div class="col-md-6">
+
+                <input type="submit"  id="btnvalida" class="form-control btn btn-warning" id="sendform1"  value="ENVIAR">
+                
+
+            </div>
+            <div class="col-md-6">
+                <input type="reset" class="form-control btn btn-warning" value="LIMPIAR">
+            </div>
+
+        </form>
+            <div>
+            {{ message }}
+        </div>
+     </div>
+       
+      </section>
+    {% endblock %}

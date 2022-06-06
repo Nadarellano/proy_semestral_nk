@@ -41,7 +41,7 @@ def __str__(self):
 class Cliente (models.Model):
     rut = models.CharField(primary_key=True, max_length= 10, verbose_name="Rut")
     nombreCompleto = models.CharField(max_length= 200, verbose_name="Nombre de Cliente")
-    email = models.CharField(max_length=100,verbose_name="Email")
+    email = models.EmailField(max_length=100,verbose_name="Email")
     contrasena = models.CharField(max_length=20,verbose_name="Contraseña de Cliente")
     telefono = models.IntegerField(verbose_name="Telefono")
     ciudad = models.CharField(max_length = 100, verbose_name="Ciudad")

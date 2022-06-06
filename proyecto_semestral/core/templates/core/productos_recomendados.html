@@ -1,0 +1,39 @@
+
+{% extends 'core/base.html'%}
+
+{% block title %}Resumen{% endblock %}
+{% load static %}
+
+    {% block content %}
+     
+     <div class ="row">
+      <h1>Productos Recomendados </h1>
+    </div>
+    <div class ="row">
+    <table border=1>
+     <tr><td>id</td><td>Nombre</td></tr>
+     {% for flo in flores %}
+      <tr><td>{{flo.idFlor}}</td><td>{{flo.nombreFlor}}</td></tr>
+     {% endfor %}
+     </table>
+
+        <div class ="row">
+     
+    </div>
+    <div class ="row">
+    <table border=1>
+     <tr><td>id</td><td>Nombre</td></tr>
+     {% for arb in arbustos %}
+      <tr><td>{{arb.idArbusto}}</td><td>{{arb.nombreArbusto}}</td></tr>
+     {% endfor %}
+     </table>
+       
+    {% endblock %}
+
+
+   
+
+        
+
+
+    

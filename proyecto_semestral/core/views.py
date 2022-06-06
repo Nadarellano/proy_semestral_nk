@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from .models import Cliente, Arbusto, Macetero,Sustrato,Flor
+from .forms import ClienteForm
+
 
 # Create your views here.
 
@@ -137,14 +140,36 @@ def veronicas(request):
 
     return render(request, 'core/veronicas.html')
 
-def viburnum(request):
+def productos_recomendados(request):
 
-    return render(request, 'core/viburnum.html')
+    arbustos= Arbusto.objects.all()
+    flores= Flor.objects.all()
+
+    datos = {
+        'arbustos' :arbustos,
+        'flores' : flores
+    }
+    return render(request, 'core/productos_recomendados.html', datos)
 
 
 
 
-
+def form_datos_cliente(request):
+    datos = {
+        'form': ClienteForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = ClienteForm(request.POST)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['message'] = 'Guardado correctamente'
+        else:
+            datos['message'] = 'Hubo un problema'
+    
+    
+    return render(request, 'core/form_datos_cliente.html', datos)
 
 
 
