@@ -8,16 +8,24 @@
 
     {% block content %}
    <div>
-            <small class="text-muted"><a href="index.html#menuproductos" class="btn btn-outline-success">Regresar a productos</a></small>
+            <small class="text-muted"><a href="index#menuproductos" class="btn btn-outline-success">Regresar a productos</a></small>
         </div>
         <br>
-        <div class="container">    
-            <div class="row g-2">
-                <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
+        <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-2"></div>
+                <div class="col-md-8" >
+                  <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
                     <div class="card-body">
-                        <h4 class="card-title">Arbustos</h4>
+                      <h4 class="card-title">Arbustos</h4>
                     </div>
-                </div>  
+                  </div>
+                </div>
+              <div class="col-md-2"></div>
+            </div> 
+          </div> 
+          <div class="container">
+            <div class="row align-items-center">
                 <div class="col-sm-3">
                     <div class="card">
                         <img class="card-img-top" src="{% static 'core/img/Coprosma.jpg'%}" alt="Card image cap">

@@ -515,12 +515,14 @@ text-decoration: none;
 }
 
 .weather {
-    width: 306px;
-    background-color: #eaeaea;
-    margin: 10px auto;
-    border-radius: 5px;
-    padding: 8px;
+    width: 250px;
+    background-color: yellowgreen;
+    margin: 05px auto;
+    border-radius: 40px;
+    padding: 3px;
     text-align: center;
+    height: 90px;
+    border-color: #222;
 }
 
 
