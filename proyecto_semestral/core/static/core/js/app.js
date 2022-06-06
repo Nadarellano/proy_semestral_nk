@@ -149,8 +149,10 @@ $(document).ready(function () {
                 console.log(data)
                 $('#weather').html(`
                     <div class="weather">
-                        <p>El clima en ${data.location.country}, ${data.location.region}</p>
-                        <img src="https:${data.current.condition.icon}"/> ${data.current.temp_c}°C</p>
+                        <div>
+                        <p>La temperatura en ${data.location.name}, ${data.location.country}
+                        es de ${data.current.temp_c}°C <img src="https:${data.current.condition.icon}"/></p>
+                        </div>
                     </div>
                 `);
             })
