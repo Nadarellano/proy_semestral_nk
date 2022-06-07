@@ -7,13 +7,14 @@
 
 
     {% block content %}
-
-  <section class="centrar" >
+{% comment %} 
+  <section class="centrar container col-12" >
     
    
         <form method="post" action ="" id="formulario"   >
             {% csrf_token %}
-            <div class="form-group row col-md-6" >
+            <div class="form-group row col-md-6 form-label inline" >
+         
             {{ form.as_table}}
             </div>
 
@@ -33,5 +34,5 @@
         </div>
      </div>
        
-      </section>
+      </section> {% endcomment %}
     {% endblock %}

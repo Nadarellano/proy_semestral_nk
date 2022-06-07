@@ -88,9 +88,9 @@ def prod_sustratos(request):
 
     return render(request, 'core/prod_sustratos.html')
 
-def registrodos(request):
+# def registrodos(request):
 
-    return render(request, 'core/registrodos.html')
+#     return render(request, 'core/registrodos.html')
 
 def rosas(request):
 
@@ -140,6 +140,10 @@ def veronicas(request):
 
     return render(request, 'core/veronicas.html')
 
+def form_datos_cliente(request):
+
+    return render(request, 'core/form_datos_cliente.html')
+
 def productos_recomendados(request):
 
     arbustos= Arbusto.objects.all()
@@ -154,7 +158,7 @@ def productos_recomendados(request):
 
 
 
-def form_datos_cliente(request):
+def registrodos(request):
     datos = {
         'form': ClienteForm()
     }
@@ -169,7 +173,7 @@ def form_datos_cliente(request):
             datos['message'] = 'Hubo un problema'
     
     
-    return render(request, 'core/form_datos_cliente.html', datos)
+    return render(request, 'core/registrodos.html', datos)
 
 
 
