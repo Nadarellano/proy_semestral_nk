@@ -8,9 +8,6 @@ from .views import tierra_humus, tulipanes, ubicacion_compra, veronicas, product
 
 
 
-
-
-
 urlpatterns = [
     path('', index,name='index'),
     path('index', index,name='index'),
@@ -46,7 +43,7 @@ urlpatterns = [
     path('ubicacion_compra', ubicacion_compra, name='ubicacion_compra'),
     path('veronicas', veronicas, name='veronicas'),
     path('productos_recomendados', productos_recomendados, name='productos_recomendados'),
-    path('form_datos_cliente', form_datos_cliente, name='form_datos_cliente'),
+   path('form_datos_cliente', form_datos_cliente, name='form_datos_cliente'),
 
     
 ]
