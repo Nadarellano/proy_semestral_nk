@@ -1,4 +1,8 @@
 from django.shortcuts import render
+# from requests import request
+from .models import Cliente, Arbusto, Macetero,Sustrato,Flor
+from .forms import ClienteForm
+
 
 # Create your views here.
 
@@ -85,9 +89,9 @@ def prod_sustratos(request):
 
     return render(request, 'core/prod_sustratos.html')
 
-def registrodos(request):
+# def registrodos(request):
 
-    return render(request, 'core/registrodos.html')
+#     return render(request, 'core/registrodos.html')
 
 def rosas(request):
 
@@ -137,18 +141,80 @@ def veronicas(request):
 
     return render(request, 'core/veronicas.html')
 
-def viburnum(request):
+def datos_cliente(request):
 
-    return render(request, 'core/viburnum.html')
+    clientes= Cliente.objects.all()
+    
+
+    datos = {
+        'clientes' : clientes
+        
+    }
+    return render(request, 'core/datos_cliente.html', datos)
+
+def productos_recomendados(request):
+
+    arbustos= Arbusto.objects.all()
+    flores= Flor.objects.all()
+
+    datos = {
+        'arbustos' :arbustos,
+        'flores' : flores
+    }
+    return render(request, 'core/productos_recomendados.html', datos)
 
 
 
 
+def registrodos(request):
+    datos = {
+        'form': ClienteForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = ClienteForm(request.POST)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['message'] = 'Guardado correctamente'
+        else:
+            datos['message'] = 'Hubo un problema'
+    
+    
+    return render(request, 'core/registrodos.html', datos)
+
+def form_mod_datos (request, id):
+    cliente = Cliente.objects.get(rut = id)
+    
+    datos = {
+        'form': ClienteForm(instance=cliente)
+    }
+
+    if request.method == 'POST':
+        formulario = ClienteForm(data=request.POST, instance=cliente)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['message'] = 'Guardado correctamente'
+        else:
+            datos['message'] = 'Hubo un problema'
+    
+    
+   
+    return render(request, 'core/form_mod_datos.html', datos)
 
 
 
+def productos_recomendados(request):
 
+    arbustos= Arbusto.objects.all()
+    flores= Flor.objects.all()
 
+    datos = {
+        'arbustos' :arbustos,
+        'flores' : flores
+    }
+    return render(request, 'core/productos_recomendados.html', datos)
 
 
 
