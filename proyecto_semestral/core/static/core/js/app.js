@@ -150,7 +150,7 @@ $(document).ready(function () {
                 $('#weather').html(`
                     <div class="weather">
                         <div>
-                        <p>La temperatura en ${data.location.name}, ${data.location.country}
+                        <p>La temperatura en ${data.location.name}, ${data.location.country}</p>
                         es de ${data.current.temp_c}°C <img src="https:${data.current.condition.icon}"/></p>
                         </div>
                     </div>
