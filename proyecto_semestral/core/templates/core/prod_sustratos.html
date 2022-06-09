@@ -5,7 +5,7 @@
 {% load static %}
 
     {% block content %}
-               <div>
+        <div>
             <small class="text-muted"><a href="index#menuproductos" class="btn btn-outline-success">Regresar a productos</a></small>
         </div>
         <br>
@@ -22,58 +22,36 @@
               <div class="col-md-2"></div>
             </div> 
           </div> 
-          <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Tierra de hoja.jpg'%}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title">Tierra de Hoja</h6>
-                                <p class="card-text">$4.990</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted"><a href="tierra_hoja" class="btn btn-primary">Ver producto</a></small>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Tierra Biológica.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Tierra Biológica</h6>
-                            <p class="card-text">$6.990</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><a href="tierra_biológica" class="btn btn-primary">Ver producto</a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Tierra compost.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Tierra de Compost</h6>
-                            <p class="card-text">$9.990</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><a href="tierra_compost" class="btn btn-primary">Ver producto</a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Tierra de Humus.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Tierra de Humus</h6>
-                            <p class="card-text">$7.990</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><a href="tierra_humus" class="btn btn-primary">Ver producto</a></small>
-                        </div>
+          <hr>
+            <div class="container">
+                <div class="row align-items-center">
+                    {% if sustratos %}
+                    {% for sus in sustratos %}
+                        <div class="col-md-4">
+                            <div class="card border-success mb-3" style="max-width: 18rem;">
+                                <div class="card-header" id="center">{{sus.tipoSustrato}}</div>
+                                    <img class="card-img-top" id="macro" src="{{sus.imagenSustrato}}" alt="">
+                                        <div class="card-body text-success">
+                                            <p class="card-text" >ID: {{sus.idSustrato}}</p>
+                                            <p class="card-text">STOCK: {{sus.stockSustrato}}</p>
+                                            <p class="card-text">PRECIO: ${{sus.precioSustrato}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted"><a href="" class="btn btn-primary">Agregar al carro</a></small>
+                                        </div>
+
+                                </div>
+                                
+                            </div>                        
+                    {% endfor %}
+
+                    {% else %}
+                    <h1> "No hay stock de productos"</h1>
+
+                    {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-     
-       
+       <hr>
     {% endblock %}

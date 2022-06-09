@@ -1,14 +1,11 @@
 
-        
-    
-
 {% extends 'core/base.html'%}
 
 {% block title %}Flores{% endblock %}
 {% load static %}
 
     {% block content %}
-         <div>
+        <div>
             <small class="text-muted"><a href="index#menuproductos" class="btn btn-outline-success">Regresar a productos</a></small>
         </div>
         <br>
@@ -25,78 +22,36 @@
               <div class="col-md-2"></div>
             </div> 
           </div> 
-          <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Tulipanes.jpg'%}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title">Tulipanes - 12 unidades</h6>
-                                <p class="card-text">$23.990</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted"><a href="tulipanes" class="btn btn-primary">Ver producto</a></small>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Rosas.jpg'%}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title">Rosas - 12 unidades</h6>
-                                <p class="card-text">$14.990</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted"><a href="rosas" class="btn btn-primary">Ver producto</a></small>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Liliums.png'%}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title">Liliums - 12 unidades</h6>
-                                <p class="card-text">$16.990</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted"><a href="liliums" class="btn btn-primary">Ver producto</a></small>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top" src="{% static 'core/img/Girasoles.jpg'%}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title">Girasoles - 12 unidades</h6>
-                                    <p class="card-text">$15.990</p>
+          <hr>
+            <div class="container">
+                <div class="row align-items-center">
+                     {% if flores %}
+                    {% for flo in flores %}
+                        <div class="col-md-4">
+                            <div class="card border-success mb-3" style="max-width: 18rem;">
+                                <div class="card-header" id="center">{{flo.nombreFlor}}</div>
+                                    <img class="card-img-top" id="macro" src="{{flo.imagenFlor}}" alt="">
+                                        <div class="card-body text-success">
+                                            <p class="card-text" >ID: {{flo.idFlor}}</p>
+                                            <p class="card-text">STOCK: {{flo.stockFlor}}</p>
+                                            <p class="card-text">PRECIO: ${{flo.precioFlor}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted"><a href="" class="btn btn-primary">Agregar al carro</a></small>
+                                        </div>
+
                                 </div>
-                                <div class="card-footer">
-                                    <small class="text-muted"><a href="girasoles" class="btn btn-primary">Ver producto</a></small>
-                                </div>
-                        </div>
+                                
+                            </div>                        
+                    {% endfor %}
+
+                    {% else %}
+                    <h1> "No hay stock de productos"</h1>
+
+                    {% endif %}
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
+       <hr>
     {% endblock %}
-
-
-   
-
-        
-
-
-    
-
-    
-
-
-
-    
-
-
-    
-
-
-
-

@@ -1,13 +1,11 @@
 
-
-
 {% extends 'core/base.html'%}
 
 {% block title %}Arbustos{% endblock %}
 {% load static %}
 
     {% block content %}
-   <div>
+        <div>
             <small class="text-muted"><a href="index#menuproductos" class="btn btn-outline-success">Regresar a productos</a></small>
         </div>
         <br>
@@ -24,77 +22,36 @@
               <div class="col-md-2"></div>
             </div> 
           </div> 
-          <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Coprosma.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                            <h6 class="card-title">Coprosma por unidad</h6>
-                            <p class="card-text">$11.990</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><a href="coprosma" class="btn btn-primary">Ver producto</a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Ceratostigma.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                        <h6 class="card-title">Ceratostigma por unidad</h6>
-                        <p class="card-text">$14.990</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted"><a href="Ceratostigma" class="btn btn-primary">Ver producto</a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/Diosma.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                        <h6 class="card-title">Diosma por unidad</h6>
-                        <p class="card-text">$15.990</p>
-                        </div>
-                        <div class="card-footer">
-                        <small class="text-muted"><a href="Diosma" class="btn btn-primary">Ver producto</a></small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{% static 'core/img/leonotis.jpg'%}" alt="Card image cap">
-                        <div class="card-body">
-                        <h6 class="card-title">Leonoti por unidad</h6>
-                        <p class="card-text">$9.990</p>
-                        </div>
-                        <div class="card-footer">
-                        <small class="text-muted"><a href="leonotis" class="btn btn-primary">Ver producto</a></small>
-                        </div>
+          <hr>
+            <div class="container">
+                <div class="row align-items-center">
+                     {% if arbustos %}
+                    {% for arb in arbustos %}
+                        <div class="col-md-4">
+                            <div class="card border-success mb-3" style="max-width: 18rem;">
+                                <div class="card-header" id="center">{{arb.nombreArbusto}}</div>
+                                    <img class="card-img-top" id="macro" src="{{arb.imagenArbusto}}" alt="">
+                                        <div class="card-body text-success">
+                                            <p class="card-text" >ID:{{arb.idArbusto}}</p>
+                                            <p class="card-text">STOCK: {{arb.stockArbusto}}</p>
+                                            <p class="card-text"> ${{arb.precioArbusto}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted"><a href="" class="btn btn-primary">Agregar al carro</a></small>
+                                        </div>
+
+                                </div>
+                                
+                            </div>                        
+                    {% endfor %}
+
+                    {% else %}
+                    <h1> "No hay stock de productos"</h1>
+
+                    {% endif %}
                     </div>
                 </div>
             </div>
         </div>
+       <hr>
     {% endblock %}
-
-
-   
-
-        
-
-
-    
-
-    
-
-
-
-    
-
-
-    
-
-
-
-
