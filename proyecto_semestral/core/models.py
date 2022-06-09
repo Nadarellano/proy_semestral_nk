@@ -21,7 +21,7 @@ class Sustrato(models.Model):
     precioSustrato = models.IntegerField(default=0, verbose_name="Precio de Sustrato")
 
 def __str__(self):
-    return self.tipoSustrato
+    return self.nombreSustrato
 
 
 
@@ -36,7 +36,7 @@ class Flor(models.Model):
 
 
 def __str__(self):
-    return self.tipoFlor
+    return self.nombreFlor
 
 class Arbusto(models.Model):
     idArbusto = models.IntegerField(primary_key=True, verbose_name="Id de Arbusto")
@@ -62,13 +62,12 @@ class Cliente (models.Model):
 
 
 
-
+#Se mostrará con el nombreCompleto en el panel de administrador
 
     def __str__(self):
          return self.nombreCompleto
 
-    def __str__(self):
-         return self.rut
+ 
 
 
 

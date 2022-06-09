@@ -213,16 +213,7 @@ def form_del_datos (request, id):
 
 
 
-def productos_recomendados(request):
 
-    arbustos= Arbusto.objects.all()
-    flores= Flor.objects.all()
-
-    datos = {
-        'arbustos' :arbustos,
-        'flores' : flores
-    }
-    return render(request, 'core/productos_recomendados.html', datos)
 
 
 
