@@ -167,6 +167,42 @@ def productos_recomendados(request):
     }
     return render(request, 'core/productos_recomendados.html', datos)
 
+def prod_maceteros(request):
+
+    maceteros= Macetero.objects.all()
+
+    datos = {
+        'maceteros' : maceteros
+    }
+    return render(request, 'core/prod_maceteros.html', datos)
+
+def prod_sustratos(request):
+
+    sustratos= Sustrato.objects.all()
+
+    datos = {
+        'sustratos' : sustratos
+    }
+    return render(request, 'core/prod_sustratos.html', datos)
+
+def prod_flores(request):
+
+    flores= Flor.objects.all()
+
+    datos = {
+        'flores' : flores
+    }
+    return render(request, 'core/prod_flores.html', datos)
+
+def prod_arbustos(request):
+
+    arbustos= Arbusto.objects.all()
+
+    datos = {
+        'arbustos' : arbustos
+    }
+    return render(request, 'core/prod_arbustos.html', datos)
+
 
 
 
