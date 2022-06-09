@@ -9,9 +9,12 @@ class Macetero(models.Model):
     colorMacetero = models.CharField(max_length= 50, verbose_name="Color de Macetero")
     stockMacetero = models.IntegerField(default=0, verbose_name="Stock de Macetero")
     precioMacetero = models.IntegerField(default=0, verbose_name="Precio de Macetero")
+    imagenMacetero = models.CharField(max_length= 300, verbose_name="Imagen Macetero")
 
-def __str__(self):
-    return self.colorMacetero
+    
+    def __str__(self):
+        return "%s %s" % (self.idMacetero, self.colorMacetero)
+
 
 
 class Sustrato(models.Model):
@@ -19,9 +22,10 @@ class Sustrato(models.Model):
     tipoSustrato = models.CharField(max_length= 50, verbose_name="Tipo de Sustrato")
     stockSustrato = models.IntegerField(default=0, verbose_name="Stock de Sustrato")
     precioSustrato = models.IntegerField(default=0, verbose_name="Precio de Sustrato")
+    imagenSustrato = models.CharField(max_length= 300, verbose_name="Imagen Sustrato")
 
-def __str__(self):
-    return self.tipoSustrato
+    def __str__(self):
+        return "%s %s" % (self.idSustrato, self.tipoSustrato)
 
 
 
@@ -30,20 +34,22 @@ class Flor(models.Model):
     nombreFlor = models.CharField(max_length= 50, verbose_name="Nombre de Flor")
     stockFlor = models.IntegerField(default=0, verbose_name="Stock de Flor")
     precioFlor = models.IntegerField(default=0, verbose_name="Precio de Flor")
+    imagenFlor = models.CharField(max_length= 300, verbose_name="Imagen flor")
 
 
+    def __str__(self):
+        return '%s %s' % (self.idFlor, self.nombreFlor)
 
-def __str__(self):
-    return self.tipoFlor
 
 class Arbusto(models.Model):
     idArbusto = models.IntegerField(primary_key=True, verbose_name="Id de Arbusto")
     nombreArbusto = models.CharField(max_length= 50, verbose_name="Nombre de Arbusto")
     stockArbusto = models.IntegerField(default=0, verbose_name="Stock de Arbusto")
     precioArbusto= models.IntegerField(default=0, verbose_name="Precio de Arbusto")
+    imagenArbusto = models.CharField(max_length= 300, verbose_name="Imagen Arbusto")
 
-def __str__(self):
-    return self.nombreArbusto
+    def __str__(self):
+        return '%s %s' % (self.idArbusto, self.nombreArbusto)
 
 
 class Cliente (models.Model):
@@ -60,13 +66,8 @@ class Cliente (models.Model):
 
 
 
-
-
     def __str__(self):
-         return self.nombreCompleto
-
-    def __str__(self):
-         return self.rut
+         return '%s %s' % (self.rut, self.nombreCompleto)
 
 
 

@@ -156,10 +156,14 @@ def productos_recomendados(request):
 
     arbustos= Arbusto.objects.all()
     flores= Flor.objects.all()
+    maceteros= Macetero.objects.all()
+    sustratos= Sustrato.objects.all()
 
     datos = {
         'arbustos' :arbustos,
-        'flores' : flores
+        'flores' : flores,
+        'maceteros' : maceteros,
+        'sustratos' : sustratos
     }
     return render(request, 'core/productos_recomendados.html', datos)
 
@@ -203,18 +207,6 @@ def form_mod_datos (request, id):
    
     return render(request, 'core/form_mod_datos.html', datos)
 
-
-
-def productos_recomendados(request):
-
-    arbustos= Arbusto.objects.all()
-    flores= Flor.objects.all()
-
-    datos = {
-        'arbustos' :arbustos,
-        'flores' : flores
-    }
-    return render(request, 'core/productos_recomendados.html', datos)
 
 
 
