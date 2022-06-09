@@ -34,7 +34,12 @@ class Flor(models.Model):
     nombreFlor = models.CharField(max_length= 50, verbose_name="Nombre de Flor")
     stockFlor = models.IntegerField(default=0, verbose_name="Stock de Flor")
     precioFlor = models.IntegerField(default=0, verbose_name="Precio de Flor")
+<<<<<<< HEAD
     imagenFlor = models.CharField(max_length= 300, verbose_name="Imagen flor")
+=======
+   
+   
+>>>>>>> 298f51157f09a462e5338d716d9f38c1f954926d
 
 
     def __str__(self):

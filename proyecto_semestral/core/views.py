@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from requests import request
 from .models import Cliente, Arbusto, Macetero,Sustrato,Flor
 from .forms import ClienteForm
@@ -206,6 +206,14 @@ def form_mod_datos (request, id):
     
    
     return render(request, 'core/form_mod_datos.html', datos)
+
+def form_del_datos (request, id):
+    
+    cliente = Cliente.objects.get(rut = id)
+
+    cliente.delete()
+
+    return redirect(to="")
 
 
 
