@@ -14,6 +14,7 @@ def __str__(self):
     return self.colorMacetero
 
 
+
 class Sustrato(models.Model):
     idSustrato = models.IntegerField(primary_key=True, verbose_name="Id de sustrato")
     tipoSustrato = models.CharField(max_length= 50, verbose_name="Tipo de Sustrato")
@@ -25,18 +26,17 @@ def __str__(self):
 
 
 
+
 class Flor(models.Model):
     idFlor = models.IntegerField(primary_key=True, verbose_name="Id de flor")
     nombreFlor = models.CharField(max_length= 50, verbose_name="Nombre de Flor")
     stockFlor = models.IntegerField(default=0, verbose_name="Stock de Flor")
     precioFlor = models.IntegerField(default=0, verbose_name="Precio de Flor")
    
-   
-
-
 
 def __str__(self):
     return self.nombreFlor
+
 
 class Arbusto(models.Model):
     idArbusto = models.IntegerField(primary_key=True, verbose_name="Id de Arbusto")
@@ -46,6 +46,7 @@ class Arbusto(models.Model):
 
 def __str__(self):
     return self.nombreArbusto
+
 
 
 class Cliente (models.Model):
@@ -60,10 +61,7 @@ class Cliente (models.Model):
     fechaRegistro = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de registro")
     ultimaModificacion = models.DateTimeField(auto_now=True, verbose_name="Fecha de modificación")
 
-
-
 #Se mostrará con el nombreCompleto en el panel de administrador
-
     def __str__(self):
          return self.nombreCompleto
 
