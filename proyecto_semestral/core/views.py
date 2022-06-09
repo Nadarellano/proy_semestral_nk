@@ -209,7 +209,7 @@ def form_del_datos (request, id):
 
     cliente.delete()
 
-    return redirect(to="datos_cliente")
+    return redirect(to="")
 
 
 
