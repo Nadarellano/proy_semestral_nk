@@ -30,6 +30,8 @@ class Flor(models.Model):
     nombreFlor = models.CharField(max_length= 50, verbose_name="Nombre de Flor")
     stockFlor = models.IntegerField(default=0, verbose_name="Stock de Flor")
     precioFlor = models.IntegerField(default=0, verbose_name="Precio de Flor")
+   
+   
 
 
 

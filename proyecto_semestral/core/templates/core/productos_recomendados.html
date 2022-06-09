@@ -1,39 +1,37 @@
-
 {% extends 'core/base.html'%}
 
-{% block title %}Resumen{% endblock %}
+{% block title %}Productos-Recomendados{% endblock %}
 {% load static %}
 
     {% block content %}
      
-     <div class ="row">
-      <h1>Productos Recomendados </h1>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-2"></div>
+          <div class="col-md-8" >
+            <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
+              <div class="card-body">
+                <h4 class="card-title">Productos Recomendados</h4>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-2"></div>
+      </div> 
     </div>
-    <div class ="row">
-    <table border=1>
-     <tr><td>id</td><td>Nombre</td></tr>
-     {% for flo in flores %}
-      <tr><td>{{flo.idFlor}}</td><td>{{flo.nombreFlor}}</td></tr>
-     {% endfor %}
-     </table>
+    <div>
+            {% for flo in flores %}
+              <div class="card-">
+                <img class="card-img-top" id="macro" src="assets/img/Mac rojo.jpg" alt="Card image cap"> 
+                    <div class="card-body">
+                        <h6 class="card-title">Nombre producto: {{flo.nombreFlor}}</h6>
+                        <p class="card-text">ID producto: {{flo.idFlor}}</p>
+                        <p class="card-text">Stock: {{flo.stockFlor}}</p>
+                        <p class="card-text">Precio: ${{flo.precioFlor}}</p>
+                        {% comment %} <p class="card-text">Imagen referencial ${{flo.imagenFlor}}</p> {% endcomment %}
+                    </div>
+              </div>
+            {% endfor %}
+    </div>
 
-        <div class ="row">
-     
-    </div>
-    <div class ="row">
-    <table border=1>
-     <tr><td>id</td><td>Nombre</td></tr>
-     {% for arb in arbustos %}
-      <tr><td>{{arb.idArbusto}}</td><td>{{arb.nombreArbusto}}</td></tr>
-     {% endfor %}
-     </table>
-       
+
     {% endblock %}
-
-
-   
-
-        
-
-
-    
