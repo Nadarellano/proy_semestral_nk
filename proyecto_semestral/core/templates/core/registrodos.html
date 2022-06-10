@@ -1,15 +1,27 @@
 
+    
+    
 {% extends 'core/base.html'%}
-
-{% block title %}Registro{% endblock %}
 {% load static %}
 
- {% block content %}
+{% block title %}Registro{% endblock %}
+ 
+{% block content %}
+ <section class="page-section about-heading">
+      <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/contact.jpg" alt="">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">Registro</span>
+                   <br>
+                  {% comment %} <span class="section-heading-lower">Contacto</span> {% endcomment %}
+                </h2>
 
-  <section class="centrar container col-12" >
-    
-   
-        <form method="post" action ="" id="formulario"   >
+           
+            <form method="post" action ="" id="formulario"   >
             {% csrf_token %}
             <div class="form-group row col-md-6 form-label inline" >
          
@@ -27,98 +39,16 @@
             </div>
 
         </form>
-            <div>
-            {{ message }}
-        </div>
-     </div>
-       
-      </section>
-    {% endblock %}
-
-    {% comment %} {% block content %}
-         
-    <section class="centrar">
-        <div>
-            <h2 id="titulo"> Formulario de Registro </h2>
-        </div>
-        <br>
-
-        <form class="row g-4 needs-validation" action="" novalidate action="procesar.php" enctype="multipart/form-data"
-            method="post" NAME="Nuevo_usuario" id="form">
-            <div class="col-md-6">
-                <label for="name" class="form-label">Nombre completo <span>(requerido)</span></label>
-                <input type="text" class="form-control" placeholder="Ej: Aurora del Carmen Acuña Parra" id="name"
-                    name="name">
-                <div class="alert alert-danger hide" role="alert" name="nameAlert">
-                    Debes completar el nombre
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="txt_rut" class="form-label">Rut <span>(requerido)</span></label>
-                <input type="text" name="txt_rut" class="form-control" placeholder="Ej: 11111111-1" id="txt_rut">
-                <!-- <div class="alert alert-danger hide" role="alert" name="rutAlert"> -->
-                    <!-- Debes completar el rut -->
-                    <p class="text" id="msgerror"></p>
-                </div>
-            <div class="col-md-6">
-                
-                    <label for="email" class="form-label">Email <span>(requerido)</span></label>
-                    <input type="email" name="email" class="form-control" placeholder="Ej: nombre@mail.com" id="email">
-                <div class="alert alert-danger hide" role="alert" name="emailAlert">
-                    Debes completar el email
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="password" class="form-label">Contraseña <span>(requerido)</span></label>
-                <input type="password" class="form-control" placeholder="Ingrese una contraseña" id="password"
-                    name="password">
-                <div class="alert alert-danger hide" role="alert" name="passwordAlert">
-                    Debes ingresar una contraseña
-                </div>´
-            </div>
-            <div class="col-md-6">
-                <label for="numberPhone" class="form-label">Número de teléfono <span>(opcional)</span></label>
-                <input type="text" name="numberPhone" class="form-control" placeholder="Ej: 930154872" id="numberPhone">
-            </div>
-
-            <div class="col-md-6">
-                <label for="city" class="form-label">Ciudad <span>(requerido)</span></label>
-                <input type="text" name="city" class="form-control" placeholder="Ej: Chillán" id="city">
-                <div class="alert alert-danger hide" role="alert" name="cityAlert">
-                    Debes completar la ciudad
-                </div>
-            </div>
-
-           <br> </br>
-           <br> </br>
-
-            <div class="col-md-12">
-                <label for="message" class="form-label">Cuéntanos ¿en qué te gustaría participar en la ONG?
-                    <span>(requerido)</span></label>
-                <textarea name="message" cols="50" rows="05" type="text" class="form-control"
-                    placeholder="Ej: Me gustaría participar en..." id="message"></textarea>
-                <div class="alert alert-danger hide" role="alert" name="messageAlert">
-                    Debes completar el mensaje
-                </div>
-              
-                  
-            </div>
-
             
-            
-           
-            <div class="col-md-6">
 
-                <input type="submit"  id="btnvalida" class="form-control btn btn-warning" id="sendform1"  value="ENVIAR">
-                
-
+              </div>
             </div>
-            <div class="col-md-6">
-                <input type="reset" class="form-control btn btn-warning" value="LIMPIAR">
-            </div>
-        </form>
-    </section> {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+   {% endblock %}
 
 
-     
-       
+

@@ -13,6 +13,11 @@ class ClienteForm(ModelForm):
         fields=[ 'rut', 'nombreCompleto',  'email', 'telefono', 'ciudad', 'comentario']
 
 
+class DireccionForm(ModelForm):
+
+    class Meta:
+        model = Cliente
+        fields=[ 'rut', 'email',  'ciudad', 'direccion']
 
 class ContactForm(forms.Form):
     name = forms.CharField(label="Nombre", required=True, widget=forms.TextInput(

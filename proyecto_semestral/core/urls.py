@@ -1,8 +1,8 @@
 from django.urls import path
 from .views import form_mod_datos, girasoles, index, carrito, nosotros, Ceratostigma, coprosma,datos_seguimiento, Diosma
-from .views import girasoles, leonotis, liliums, mac_amarillo, mac_gris,mac_negro, mac_rojo, contact
-from .views import nandinas, pago, prod_arbustos, prod_flores, prod_maceteros,prod_sustratos, registrodos
-from .views import rosas, stenocarpus, stock, terminos_condiciones, tierra_biológica, tierra_compost, tierra_hoja
+from .views import girasoles, leonotis, liliums, mac_amarillo, mac_gris,mac_negro, mac_rojo, contact, form_del_direccion, form_direccion
+from .views import nandinas, pago, prod_arbustos, prod_flores, prod_maceteros,prod_sustratos, registrodos, form_direccion
+from .views import rosas, stenocarpus, stock, terminos_condiciones, tierra_biológica, tierra_compost, tierra_hoja, datos_despacho
 from .views import tierra_humus, tulipanes, ubicacion_compra, veronicas, datos_cliente,  productos_recomendados, form_mod_datos, form_del_datos
 
 
@@ -47,5 +47,8 @@ urlpatterns = [
     path('form_mod_datos/<id>', form_mod_datos, name='form_mod_datos'),
     path('form_del_datos/<id>', form_del_datos, name='form_del_datos'),
     path('contact', contact, name='contact'),
+    path('datos_despacho', datos_despacho, name='datos_despacho'),
+    path('form_direccion/<id>', form_direccion, name='form_direccion'),
+    path('form_del_direccion/<id>', form_direccion, name='form_del_direccion'),
     
 ]
