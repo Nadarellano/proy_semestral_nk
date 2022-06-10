@@ -1,3 +1,4 @@
+from email.policy import default
 from turtle import color
 from django.db import models
 
@@ -57,17 +58,17 @@ class Cliente (models.Model):
     nombreCompleto = models.CharField(max_length= 200, verbose_name="Nombre de Cliente")
     email = models.CharField(max_length=100,verbose_name="Email")
     contrasena = models.CharField(max_length=20,verbose_name="Contraseña de Cliente")
-    telefono = models.CharField(max_length=20, verbose_name="Telefono")
+    telefono = models.CharField(max_length=20,verbose_name="Telefono")
     ciudad = models.CharField(max_length = 100, verbose_name="Ciudad")
     comentario = models.TextField(verbose_name="Comentario")
-    direccion = models.CharField(max_length = 300, verbose_name="Dirección")
+    direccion = models.CharField(max_length = 300, verbose_name="Dirección", default=False)
     fechaRegistro = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de registro")
     ultimaModificacion = models.DateTimeField(auto_now=True, verbose_name="Fecha de modificación")
 
 
 
     def __str__(self):
-         return '%s %s' % (self.rut, self.nombreCompleto)
+         return '%s ' % (self.nombreCompleto)
 
 
 

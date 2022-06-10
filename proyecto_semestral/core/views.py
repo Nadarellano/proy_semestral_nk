@@ -241,10 +241,15 @@ def form_mod_datos (request, id):
             datos['message'] = 'Guardado correctamente'
         else:
             datos['message'] = 'Hubo un problema'
+
+    
+  
     
     
    
     return render(request, 'core/form_mod_datos.html', datos)
+
+    
 
 def form_del_datos (request, id):
     
@@ -252,7 +257,7 @@ def form_del_datos (request, id):
 
     cliente.delete()
 
-    return redirect(to="")
+    return redirect(to ='datos_cliente')
 
 
 def contact(request):

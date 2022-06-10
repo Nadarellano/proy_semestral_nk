@@ -49,6 +49,6 @@ urlpatterns = [
     path('contact', contact, name='contact'),
     path('datos_despacho', datos_despacho, name='datos_despacho'),
     path('form_direccion/<id>', form_direccion, name='form_direccion'),
-    path('form_del_direccion/<id>', form_direccion, name='form_del_direccion'),
+    path('form_del_direccion/<id>', form_del_direccion, name='form_del_direccion'),
     
 ]
