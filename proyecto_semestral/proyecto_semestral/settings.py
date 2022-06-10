@@ -113,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -128,3 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Email Config
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '273b01bbc74228'
+EMAIL_HOST_PASSWORD = '7d954e28b15236'
+EMAIL_PORT = '2525'
