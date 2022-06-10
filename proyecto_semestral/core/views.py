@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 # from requests import request
 from .models import Cliente, Arbusto, Macetero,Sustrato,Flor
-from .forms import ClienteForm, ContactForm
+from .forms import ClienteForm, ContactForm, DireccionForm
 from django.urls import reverse
 from django.core.mail import EmailMessage
+from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
@@ -223,7 +224,7 @@ def registrodos(request):
             datos['message'] = 'Hubo un problema'
     
     
-    return render(request, 'core/registrodos.html', datos)
+    return render(request, "core/registrodos.html",datos)
 
 def form_mod_datos (request, id):
     cliente = Cliente.objects.get(rut = id)
@@ -283,3 +284,47 @@ def contact(request):
                 return redirect(reverse('contact')+"?fail")
     
     return render(request, "core/contact.html",{'form':contact_form})
+
+
+
+def datos_despacho(request):
+
+    clientes= Cliente.objects.all()
+    
+
+    datos = {
+        'clientes' : clientes
+        
+    }
+    return render(request, 'core/datos_despacho.html', datos)
+
+
+def form_direccion (request, id):
+    cliente = Cliente.objects.get(rut = id)
+    
+    datos = {
+        'form': DireccionForm(instance=cliente)
+    }
+
+    if request.method == 'POST':
+        formulario = DireccionForm(data=request.POST, instance=cliente)
+        
+        if formulario.is_valid:
+            formulario.save()
+            datos['message'] = 'Guardado correctamente'
+        else:
+            datos['message'] = 'Hubo un problema'
+    
+    
+   
+    return render(request, 'core/form_direccion.html', datos)
+
+
+    
+def form_del_direccion (request, id):
+    
+    cliente = Cliente.objects.get(rut = id)
+
+    cliente.delete()
+
+    return redirect(to="")
