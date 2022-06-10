@@ -5,10 +5,13 @@
 
  {% block content %}
 
+ <button class= "btn btn-primary"  type="button"><a class="letra_link" href="{% url 'datos_cliente' %}">RETROCEDER</a></button>
+
+
   <section class="centrar container col-12 row" >
     
    
-        <form method="post" action ="" id="formulario"   >
+        <form method="post" action ="" id="formulario"    >
             {% csrf_token %}
             <div class="form-group row col-md-6 form-label inline" >
          

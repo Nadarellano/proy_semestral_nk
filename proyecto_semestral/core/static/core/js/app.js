@@ -137,6 +137,7 @@ $(document).ready(function () {
         console.log("Formulario enviado")
         event.preventDefault();
     });
+    
 
     if('geolocation' in navigator) {
         /* geolocation is available */

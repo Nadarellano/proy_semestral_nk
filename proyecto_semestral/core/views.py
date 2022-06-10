@@ -212,6 +212,11 @@ def form_del_datos (request, id):
     return redirect(to="datos_cliente")
 
 
+def datos_despacho(request):
+
+    return render(request, 'core/datos_despacho.html')
+
+
 
 
 
