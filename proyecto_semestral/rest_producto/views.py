@@ -74,3 +74,7 @@ def lista_sustratos(request):
             return Response(sustrato_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(sustrato_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
