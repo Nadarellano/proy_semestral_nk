@@ -74,3 +74,28 @@ def lista_sustratos(request):
             return Response(sustrato_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(sustrato_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET','PUT','DELETE'])
+def detalle_macetero(request,id):
+    try:
+        macetero = Macetero.objects.get(id=id)
+    except Macetero.DoesNotExist:
+        return Response(status = status.HTTP_404_NOT_FOUND)
+    if request.method =='GET':
+        mac_serializer = MacSerializer(macetero)
+        return Response(mac_serializer.data)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        mac_serializer = MacSerializer(macetero, data=data)
+        if mac_serializer.is_valid():
+            mac_serializer.save()
+            return Response(mac_serializer.data)
+        else:
+            return Response(mac_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        macetero.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+
+
