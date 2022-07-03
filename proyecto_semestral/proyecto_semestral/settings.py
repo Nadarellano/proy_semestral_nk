@@ -112,6 +112,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -137,3 +144,4 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '273b01bbc74228'
 EMAIL_HOST_PASSWORD = '7d954e28b15236'
 EMAIL_PORT = '2525'
+
