@@ -1,14 +1,20 @@
 from django.shortcuts import render
 from rest_framework import status
+from rest_framework.decorators import api_view,permission_classes
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
-
 from core.models import Macetero, Sustrato, Arbusto, Flor, Cliente
 from .serializers import MacSerializer, ArbustoSerializer, FlorSerializer, SustratoSerializer, ClienteSerializer
+
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
 def lista_maceteros(request):
     if request.method == 'GET':
         maceteros = Macetero.objects.all()
@@ -26,6 +32,7 @@ def lista_maceteros(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
 def lista_arbustos(request):
     if request.method == 'GET':
         arbustos = Arbusto.objects.all()
@@ -43,6 +50,7 @@ def lista_arbustos(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
 def lista_flores(request):
     if request.method == 'GET':
         flores = Flor.objects.all()
@@ -60,6 +68,7 @@ def lista_flores(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
 def lista_sustratos(request):
     if request.method == 'GET':
         sustratos = Sustrato.objects.all()
@@ -76,6 +85,7 @@ def lista_sustratos(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
 def lista_clientes(request):
     if request.method == 'GET':
         clientes = Cliente.objects.all()
@@ -91,6 +101,7 @@ def lista_clientes(request):
             return Response(cliente_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_macetero(request,id):
     try:
         macetero = Macetero.objects.get(idMacetero=id)
@@ -112,6 +123,7 @@ def detalle_macetero(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_sustrato(request,id):
     try:
         sustrato = Sustrato.objects.get(idSustrato=id)
@@ -133,6 +145,7 @@ def detalle_sustrato(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_arbusto(request,id):
     try:
         arbusto = Arbusto.objects.get(idArbusto=id)
@@ -154,6 +167,7 @@ def detalle_arbusto(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_flor(request,id):
     try:
         flor = Flor.objects.get(idFlor=id)
@@ -175,6 +189,7 @@ def detalle_flor(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_cliente(request,id):
     try:
         cliente = Cliente.objects.get(email=id)
