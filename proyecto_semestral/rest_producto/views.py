@@ -185,7 +185,7 @@ def detalle_cliente(request,id):
         return Response(cliente_serializer.data)
     if request.method == 'PUT':
         data = JSONParser().parse(request)
-        cliente_serializer = FlorSerializer(cliente, data=data)
+        cliente_serializer = cliente_serializer(cliente, data=data)
         if cliente_serializer.is_valid():
             cliente_serializer.save()
             return Response(cliente_serializer.data)
