@@ -71,7 +71,15 @@ class Cliente (models.Model):
          return '%s ' % (self.nombreCompleto)
 
 
-
+class Producto(models.Model):
+    idProducto = models.IntegerField(primary_key=True, verbose_name="Id de Producto")
+    nombreProducto = models.CharField(max_length=200, verbose_name="Nombre Producto")
+    tipoProducto = models.CharField(max_length=200, verbose_name="Tipo Producto")
+    precioProducto = models.FloatField()
+    digital = models.BooleanField(default=False,null=True, blank=True)
+    imagenProducto = models.CharField(max_length= 300, verbose_name="Imagen Producto")
+    def _str_(self):
+        return '%s %s' % (self.idProducto, self.nombreProducto)
 
 # class CategoriaProd(models.Model):
 #     idCategoria = models.IntegerField(primary_key=True, verbose_name="Id Categoría")
