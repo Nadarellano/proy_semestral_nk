@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+from django.contrib.messages import constants as mensajes_de_error
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,6 +44,8 @@ INSTALLED_APPS = [
     'core',
     'rest_producto',
     'rest_framework.authtoken',
+    'autenticacion',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -144,4 +149,16 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '273b01bbc74228'
 EMAIL_HOST_PASSWORD = '7d954e28b15236'
 EMAIL_PORT = '2525'
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
+
+MESSAGE_TAGS={
+
+    mensajes_de_error.DEBUG:'debug',
+    mensajes_de_error.INFO:'info',
+    mensajes_de_error.SUCCESS:'success',
+    mensajes_de_error.WARNING:'warning',
+    mensajes_de_error.ERROR:'danger',
+
+}
 
