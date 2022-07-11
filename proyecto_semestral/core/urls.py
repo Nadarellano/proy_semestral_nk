@@ -8,8 +8,8 @@ from .views import  ubicacion_compra, datos_cliente,  productos_recomendados, fo
 
 
 urlpatterns = [
-    path('', index,name='index'),
-    path('index', index,name='index'),
+    path('',index,name='index'),
+    path('index',index,name='index'),
     path('carrito', carrito,name='carrito'),
     path('nosotros', nosotros, name='nosotros'),
     path('datos_seguimiento', datos_seguimiento, name='datos_seguimiento'),

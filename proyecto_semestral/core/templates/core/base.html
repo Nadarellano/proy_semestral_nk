@@ -30,7 +30,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light  ">
             <div class="container-fluid">
-                <a class="nav-link active" aria-current="page" href="index"><img class="tamanologo"
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><img class="tamanologo"
                         src="{% static 'core/img/logogranja1.jpg'%}"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -41,16 +41,16 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="contact">Escríbenos</a>
+                            <a class="nav-link active" href="{% url 'contact' %}">Escríbenos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="nosotros">Nosotros</a>
+                            <a class="nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="datos_seguimiento">Sigue tu compra</a>
+                            <a class="nav-link active" href="{% url 'datos_seguimiento'%}">Sigue tu compra</a>
                         </li>
                     </ul>
 
@@ -66,14 +66,22 @@
                     <br>
                     <div class="d-flex">
                        
-                        <a href="registrodos" class="nav-link active" id="reg">Registro</a>
+                        {% if user.is_authenticated %}
+                        Hola {{user.username}} &nbsp; &nbsp; &nbsp; &nbsp;<a href="{% url 'cerrar_sesion' %}" style="color: black;">Cerrar sesión</a>
+
+                        {% else %}
+
+                        <a href="{% url 'logear'%}" style="color: black;"> Login </a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="{% url 'Autenticacion'%}" style="color: black;">Regístrate</a>
+
+                        {% endif %}
+
                     </div>
-                    <div class="d-flex">
-                        <button onclick="document.getElementById('id01').style.display='block'" class="form-control btn btn-success btn-md"">Ingresar</button>
-                    </div>
+                    {% comment %} <div class="d-flex">
+                        <button onclick="document.getElementById('id01').style.display='block' class="form-control btn btn-success btn-md"">Ingresar</button>
+                    </div> {% endcomment %}
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end footpaddd">
 
-                        <button class="btn btn btn-block" type="button"><a href="carrito" class="card-link1"><img
+                        <button class="btn btn btn-block" type="button"><a href="{% url 'carrito' %}" class="card-link1"><img
                                     src="{% static 'core/img/carrito-de-compras.png'%}" alt=""></a></button>
                     </div>
                 </div>
