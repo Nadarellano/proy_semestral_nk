@@ -199,7 +199,7 @@ def contact(request):
                 "Vive Verde: Nuevo mensaje de contacto",
                 "De {} <{}>\n\nEscribió:\n\n{}".format(name, email, content),
                 "no-contestar@inbox.mailtrap.io",
-                ["an.munoze@duocuc.cl"],
+                ["nad.arellano@duocuc.cl"],
                 reply_to=[email]
             )
 
