@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 # from requests import request
 from .models import Cliente, Arbusto, Macetero,Sustrato,Flor
@@ -5,8 +6,7 @@ from .forms import ClienteForm, ContactForm, DireccionForm
 from django.urls import reverse
 from django.core.mail import EmailMessage
 from django.contrib.auth.forms import UserCreationForm
-
-
+from rest_producto.models import Producto
 # Create your views here.
 
 def index (request):
@@ -257,3 +257,22 @@ def form_del_direccion (request, id):
     cliente.delete()
 
     return redirect(to="")
+
+def buscar(request):
+
+    if request.GET["prd"]:
+
+     #mensaje="Artículo buscado: %r" %request.GET["prd"]
+        producto=request.GET["prd"]
+
+        articulos=Producto.objects.filter(nombreProducto__icontains=producto)
+
+        return render(request, "core/resultados_busqueda.html", {"articulos":articulos, "query":producto})
+
+    else:
+
+        return render(request,"core/respuesta.html")
+
+
+
+    # return redirect('index')

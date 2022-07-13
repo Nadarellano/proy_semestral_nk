@@ -1,0 +1,37 @@
+{% extends 'core/base.html'%}
+{% load static %}
+
+
+{% block title %}Resultados Búsqueda{% endblock %}
+
+
+    {% block content %}
+
+    <div>
+
+   <h3 class="som"> Estás buscando: <strong> "{{query}}" </strong></h3>
+
+    {% if articulos%}
+
+        <h4 class="som"> {{articulos|length}} artículos encontrados</h4>
+        
+        <div class="list-group">
+        <ul>
+
+            {% for articulo in articulos %}
+                <a href="#" class="list-group-item list-group-item-action">
+                    {{articulo.nombreProducto}} &nbsp; ${{articulo.precioProducto}} &nbsp; {{articulo.imagenProducto}}
+                </a>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <p> Artículo no encontrado<p>
+
+    {% endif %}
+
+    </div>
+
+
+    {% endblock %}
