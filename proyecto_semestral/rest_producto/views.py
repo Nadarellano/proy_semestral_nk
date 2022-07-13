@@ -1,20 +1,51 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from rest_framework import status
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
-from core.models import Macetero, Sustrato, Arbusto, Flor, Cliente
-from .serializers import MacSerializer, ArbustoSerializer, FlorSerializer, SustratoSerializer, ClienteSerializer
-
+from core.models import *
+from rest_producto import *
+from .serializers import *
+from rest_producto.models import *
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import render
 
+from django.shortcuts import redirect
+
+from django.shortcuts import render
+
+from django.shortcuts import redirect
+
+from django.shortcuts import render
+from django.http import JsonResponse
+import json
+import datetime
+from .models import * 
+from .utils import cookieCart, cartData, guestOrder
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-@permission_classes((IsAuthenticated,))
+
+def lista_productos(request):
+    if request.method == 'GET':
+        productos = Producto.objects.all()
+        producto_serializer = ProductoSerializer(productos, many=True)
+        return Response(producto_serializer.data)
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        producto_serializer = ProductoSerializer(data=data)
+        if producto_serializer.is_valid():
+            producto_serializer.save()
+            return Response(producto_serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(producto_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@csrf_exempt
+@api_view(['GET', 'POST'])
+
 def lista_maceteros(request):
     if request.method == 'GET':
         maceteros = Macetero.objects.all()
@@ -32,7 +63,7 @@ def lista_maceteros(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-@permission_classes((IsAuthenticated,))
+
 def lista_arbustos(request):
     if request.method == 'GET':
         arbustos = Arbusto.objects.all()
@@ -50,7 +81,7 @@ def lista_arbustos(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-@permission_classes((IsAuthenticated,))
+
 def lista_flores(request):
     if request.method == 'GET':
         flores = Flor.objects.all()
@@ -68,7 +99,7 @@ def lista_flores(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-@permission_classes((IsAuthenticated,))
+
 def lista_sustratos(request):
     if request.method == 'GET':
         sustratos = Sustrato.objects.all()
@@ -85,7 +116,7 @@ def lista_sustratos(request):
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-@permission_classes((IsAuthenticated,))
+
 def lista_clientes(request):
     if request.method == 'GET':
         clientes = Cliente.objects.all()
@@ -123,7 +154,7 @@ def detalle_macetero(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
-@permission_classes((IsAuthenticated,))
+
 def detalle_sustrato(request,id):
     try:
         sustrato = Sustrato.objects.get(idSustrato=id)
@@ -145,7 +176,7 @@ def detalle_sustrato(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
-@permission_classes((IsAuthenticated,))
+
 def detalle_arbusto(request,id):
     try:
         arbusto = Arbusto.objects.get(idArbusto=id)
@@ -167,7 +198,7 @@ def detalle_arbusto(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
-@permission_classes((IsAuthenticated,))
+
 def detalle_flor(request,id):
     try:
         flor = Flor.objects.get(idFlor=id)
@@ -189,7 +220,7 @@ def detalle_flor(request,id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET','PUT','DELETE'])
-@permission_classes((IsAuthenticated,))
+
 def detalle_cliente(request,id):
     try:
         cliente = Cliente.objects.get(email=id)
@@ -209,3 +240,55 @@ def detalle_cliente(request,id):
     elif request.method == 'DELETE':
         cliente.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET','PUT','DELETE'])
+
+def detalle_order(request,id):
+    try:
+        order = Order.objects.get(transaccion_id=id)
+    except Order.DoesNotExist:
+        return Response(status = status.HTTP_404_NOT_FOUND)
+    if request.method =='GET':
+        order_serializer = OrderSerializer(order)
+        return Response(order_serializer.order)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        order_serializer = order_serializer(order, data=data)
+        if order_serializer.is_valid():
+            order_serializer.save()
+            return Response(order_serializer.data)
+        else:
+            return Response(order_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        order.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+@api_view(['GET','PUT','DELETE'])
+
+
+def detalle_order_item(request,id):
+    try:
+        orderitems = OrderItem.objects.get(order=id)
+    except OrderItem.DoesNotExist:
+        return Response(status = status.HTTP_404_NOT_FOUND)
+    if request.method =='GET':
+        orderitem_serializer = OrderItemSerializer(orderitems)
+        return Response(orderitem_serializer.orderitems)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        orderitem_serializer = orderitem_serializer(orderitems, data=data)
+        if orderitem_serializer.is_valid():
+            orderitem_serializer.save()
+            return Response(orderitem_serializer.data)
+        else:
+            return Response(orderitem_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        orderitems.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+

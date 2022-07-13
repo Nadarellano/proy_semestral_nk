@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'rest_producto',
-    'rest_framework.authtoken',
+
+    
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                   
             ],
         },
     },
@@ -145,3 +147,17 @@ EMAIL_HOST_USER = '273b01bbc74228'
 EMAIL_HOST_PASSWORD = '7d954e28b15236'
 EMAIL_PORT = '2525'
 
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')

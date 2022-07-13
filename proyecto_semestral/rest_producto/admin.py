@@ -3,4 +3,5 @@ from .models import *
 admin.site.register(Producto)
 admin.site.register(Order)
 admin.site.register(OrderItem)
-admin.site.register(DireccionDespacho)
+
+admin.site.register(Categoria)

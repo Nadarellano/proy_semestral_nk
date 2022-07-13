@@ -1,10 +1,27 @@
+import datetime
+import json
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
+from  rest_producto.utils import *
+
+from rest_producto.utils import cartData
+
+
 # from requests import request
-from .models import Cliente, Arbusto, Macetero,Sustrato,Flor
+from .models import *
 from .forms import ClienteForm, ContactForm, DireccionForm
 from django.urls import reverse
 from django.core.mail import EmailMessage
 from django.contrib.auth.forms import UserCreationForm
+from rest_producto.models import *
+from django.shortcuts import render
+from rest_producto.models import *
+
+from core.models import *
+from django.shortcuts import redirect
+from core import *
+from django.shortcuts import redirect
+from django.shortcuts import render, HttpResponse
 
 
 # Create your views here.
@@ -14,10 +31,14 @@ def index (request):
     return render(request, 'core/index.html')
 
 
+def tienda (request):
+
+    return render(request, 'core/tienda.html')
+
+
 def carrito (request):
 
     return render(request,'core/carrito.html')
-
 
 
 
@@ -79,20 +100,7 @@ def datos_cliente(request):
     }
     return render(request, 'core/datos_cliente.html', datos)
 
-def productos_recomendados(request):
-
-    arbustos= Arbusto.objects.all()
-    flores= Flor.objects.all()
-    maceteros= Macetero.objects.all()
-    sustratos= Sustrato.objects.all()
-
-    datos = {
-        'arbustos' :arbustos,
-        'flores' : flores,
-        'maceteros' : maceteros,
-        'sustratos' : sustratos
-    }
-    return render(request, 'core/productos_recomendados.html', datos)
+    
 
 def prod_maceteros(request):
 
@@ -129,6 +137,16 @@ def prod_arbustos(request):
         'arbustos' : arbustos
     }
     return render(request, 'core/prod_arbustos.html', datos)
+
+
+def prod_productos(request):
+
+    productos= Producto.objects.all()
+
+    datos = {
+        'productos' : productos
+    }
+    return render(request, 'core/tienda.html', datos)
 
 
 
@@ -257,3 +275,95 @@ def form_del_direccion (request, id):
     cliente.delete()
 
     return redirect(to="")
+
+
+
+
+def tienda(request):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	products = Producto.objects.all()
+	context = {'products':products, 'cartItems':cartItems}
+	return render(request, 'core/tienda.html', context)
+
+
+def carrito(request):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	return render(request, 'core/carrito.html', context)
+
+def checkout(request):
+	data = cartData(request)
+	
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	return render(request, 'rest_producto/checkout.html', context)
+
+def updateItem(request):
+	data = json.loads(request.body)
+	productId = data['productId']
+	action = data['action']
+	print('Action:', action)
+	print('Product:', productId)
+
+	customer = request.user.customer
+	product = Producto.objects.get(id=productId)
+	order, created = Order.objects.get_or_create(customer=customer, complete=False)
+
+	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+
+	if action == 'add':
+		orderItem.quantity = (orderItem.quantity + 1)
+	elif action == 'remove':
+		orderItem.quantity = (orderItem.quantity - 1)
+
+	orderItem.save()
+
+	if orderItem.quantity <= 0:
+		orderItem.delete()
+
+	return JsonResponse('Item was added', safe=False)
+
+def processOrder(request):
+	transaction_id = datetime.datetime.now().timestamp()
+	data = json.loads(request.body)
+
+	if request.user.is_authenticated:
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
+	else:
+		customer, order = guestOrder(request, data)
+
+	total = float(data['form']['total'])
+	order.transaction_id = transaction_id
+
+	if total == order.get_cart_total:
+		order.complete = True
+	order.save()
+
+	if order.shipping == True:
+		ShippingAddress.objects.create(
+		customer=customer,
+		order=order,
+		address=data['shipping']['address'],
+		city=data['shipping']['city'],
+		state=data['shipping']['state'],
+		zipcode=data['shipping']['zipcode'],
+		)
+
+	return JsonResponse('Payment submitted..', safe=False)
+
+
+

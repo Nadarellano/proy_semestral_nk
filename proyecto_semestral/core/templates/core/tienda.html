@@ -1,0 +1,148 @@
+
+
+{% extends 'core/base.html'%}
+
+{% block title %}Tienda{% endblock %}
+
+{% load static %}
+
+
+
+
+    {% block content %}
+
+
+<script type="text/javascript">
+	// // $(document).ready(function() {
+$.get('http://127.0.0.1:8000/api/lista_productos', function(data) { 
+// //  console.log(data)
+  success: function(data) {
+       
+          
+          var idProducto = item.idProducto;
+          var nombreProducto = item.nombreProducto;
+          var precioProducto = item.precioProducto;
+          var imagenProducto = item.imagenProducto;
+          var categoria = item.categoria;
+            }
+   });
+	
+
+	</script>
+
+<script type="text/javascript">
+		var user = '{{request.user}}'
+
+		function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+
+		function getCookie(name) {
+		    // Split cookie string and get all individual name=value pairs in an array
+		    var cookieArr = document.cookie.split(";");
+
+		    // Loop through the array elements
+		    for(var i = 0; i < cookieArr.length; i++) {
+		        var cookiePair = cookieArr[i].split("=");
+
+		        /* Removing whitespace at the beginning of the cookie name
+		        and compare it with the given string */
+		        if(name == cookiePair[0].trim()) {
+		            // Decode the cookie value and return
+		            return decodeURIComponent(cookiePair[1]);
+		        }
+		    }
+
+		    // Return null if not found
+		    return null;
+		}
+		var cart = JSON.parse(getCookie('cart'))
+
+		if (cart == undefined){
+			cart = {}
+			console.log('Cart Created!', cart)
+			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+		console.log('Cart:', cart)
+	
+	</script>
+
+</head>
+<body>
+
+
+
+
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'tienda' %}">Store <span class="sr-only">(current)</span></a>
+	      </li>
+	 
+	    </ul>
+	    <div class="form-inline my-2 my-lg-0">
+	     	<a href="#"class="btn btn-warning">Login</a>
+	     	
+	     	<a href="{% url 'carrito' %}">
+	    		<img  id="cart-icon" src="{% static 'images/cart.png' %}">
+	    	</a>
+	    	<p id="cart-total">{{cartItems}}</p>
+
+	    </div>
+	  </div>
+	</nav>
+
+
+  
+<div class="container  card-deck">
+
+
+ 
+  <div  class="row row-cols-1 row-cols-md-2 g-4 ">
+                            <div class="card border-success mb-2  " style="width: 100%; margin: 5px 5px;">
+                                <div class="card-header" id="center"></div>
+                                    <img class="card-img-top" src = "" >
+									
+                                        <div class="card-body text-success">
+                                           <div class="card-title">   </div>
+                                           <div class="card-text">     </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <a href= "#" class=" btn btn-primary" >Agregar al carro</a>
+                                            <button class =" data-product" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                        </div>
+
+                              
+                                
+    </div>
+        </div>
+      
+                                  
+ </div>                       
+                            </div> 
+ <script src="{% static '/core/vendor/jquery/jquery.min.js' %}"></script>
+     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+ <script src="{% static '/core/js/cart.js' %}"></script>   
+ <script src="{% static '/core/js/api.js' %}"></script>     
+
+	
+    {% endblock %}
+
+
+
+

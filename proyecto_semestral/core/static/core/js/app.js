@@ -3,6 +3,7 @@ const weatherApiKey = "dc46d389e0ac4b26a94114800221305";
 $(document).ready(function () {
 
 
+
     // console.log("FUNCIONA")
     $("#form").validate({
         rules: {

@@ -1,73 +1,152 @@
 
 {% extends 'core/base.html'%}
-{% load static %}
 
-{% block title %}Carrito{% endblock %}
+{% block title %}carrito{% endblock %}
+
+{% load static %}
 
 
     {% block content %}
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-2"></div>
-          <div class="col-md-8" >
-            <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
-              <div class="card-body">
-                <h4 class="card-title">Carrito de compras</h4>
-              </div>
-            </div>
-          </div>
-        <div class="col-md-2"></div>
-      </div> 
-    </div>
-    <div>
-      <div>
-        <table class="table table-success table-striped">
-            <thead>
-              <tr>
-                <th scope="col" class="prod_carr">Producto</th>
-                <th scope="col"  class="prod_carr">Precio</th>
-                <th scope="col"  class="prod_carr">Cantidad</th>
-                <th scope="col"  class="prod_carr">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><p class="bol">Macetero Rojo</p> </th>
-                <td scope="row"><p>$11.990</p></td> 
-                <td scope="row"><p>001</p></td>
-                <td scope="row"><p>$11.990</p></td>
-              </tr>
-              <tr>
-                <th scope="row"><p class="bol">Tulipanes Amarillos</p> </th>
-                <td scope="row"><p>$  8.990</p></td> 
-                <td scope="row"><p>001</p></td>
-                <td scope="row"><p>$  8.990</p></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    </div>
-    <div class= "container">
-      <div class="row">
-          <div class="col-sm">
-            <hr style="color: green" size="20" />
-            <h3 class="res">RESUMEN</h3>
-            <br>
-            <h3 class="res">Subtotal: $ 20.980.-</h3>
-            <br>
-            {% comment %} <p class="mens">"Los códigos de descuento y los costos de envío se agregarán durante el pago."</p> {% endcomment %}
-            <br>
-            <button class= "btn btn-primary"  type="submit"><a class="letra_link" href="datos_despacho">MODIFICAR DIRECCIÓN DESPACHO</a></button>
-            <br>
-             <br>
-            <p class="mens">"Los códigos de descuento y los costos de envío se agregarán durante el pago."</p>
+<link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+<script type="text/javascript">
 
-            <br>
-            <button class= "btn btn-success"  type="submit"><a class="letra_link" href="pago">IR A PAGAR</a></button>
-            <br>
-            <br>
-            <p class="mens"> Al hacer click en "Ir a pagar" estas aceptando nuestros <a href="terminos_condiciones"> términos y condiciones </a></p>
-          </div>
-      </div>
-    </div>
+		var user = '{{request.user}}'
+
+		function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+
+		function getCookie(name) {
+		    // Split cookie string and get all individual name=value pairs in an array
+		    var cookieArr = document.cookie.split(";");
+
+		    // Loop through the array elements
+		    for(var i = 0; i < cookieArr.length; i++) {
+		        var cookiePair = cookieArr[i].split("=");
+
+		        /* Removing whitespace at the beginning of the cookie name
+		        and compare it with the given string */
+		        if(name == cookiePair[0].trim()) {
+		            // Decode the cookie value and return
+		            return decodeURIComponent(cookiePair[1]);
+		        }
+		    }
+
+		    // Return null if not found
+		    return null;
+		}
+		var cart = JSON.parse(getCookie('cart'))
+
+		if (cart == undefined){
+			cart = {}
+			console.log('Cart Created!', cart)
+			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+		console.log('Cart:', cart)
+	
+	</script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="{% url 'tienda' %}">Vive Verde</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'tienda' %}">Store <span class="sr-only">(current)</span></a>
+	      </li>
+	 
+	    </ul>
+	    <div class="form-inline my-2 my-lg-0">
+	     	<a href="#"class="btn btn-warning">Login</a>
+	     	
+	     	<a href="{% url 'carrito' %}">
+	    		<img  id="cart-icon" src="{% static 'images/cart.png' %}">
+	    	</a>
+	    	<p id="cart-total">{{cartItems}}</p>
+
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="box-element">
+
+				<a  class="btn btn-outline-dark" href="{% url 'tienda' %}">&#x2190; Continue Shopping</a>
+
+				<table class="table" id="order">
+					<tr>
+						<th><h5>Items: <strong></strong></h5></th>
+						<th><h5>Total:<strong> </strong></h5></th>
+						<th>
+							<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'pago' %}">Checkout</a>
+						</th>
+					</tr>
+				</table>
+
+        <br>
+			<div class="box-element">
+				<div class="cart-row">
+					<div style="flex:2"></div>
+					<div style="flex:2"><strong>Articulo</strong></div>
+					<div style="flex:1"><strong>Precio</strong></div>
+					<div style="flex:1"><strong>Cantidad</strong></div>
+					<div style="flex:1"><strong>Total</strong></div>
+				</div>
+				
+				<div class="cart-row">
+					<div style="flex:2"><img class="row-image" src=></div>
+					<div style="flex:2"><p></p></div>
+					<div style="flex:1"><p>$</p></div>
+					<div style="flex:1">
+						<p class="quantity"></p>
+						<div class="quantity">
+							<img data-product="" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}">
+					
+							<img data-product="" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}">
+						</div>
+					</div>
+					<div style="flex:1"><p>$</p></div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+
+
+		
+ 
+ <script src="{% static '/core/vendor/jquery/jquery.min.js' %}"></script>
+     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static '/core/js/api.js' %}"></script>     
+	   <script src="{% static '/core/js/main.js' %}"></script>     
+
+
+
+
+	
     {% endblock %}
+
+
+
+

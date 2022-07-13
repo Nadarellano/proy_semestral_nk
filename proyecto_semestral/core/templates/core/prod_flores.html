@@ -25,16 +25,16 @@
           <hr>
             <div class="container">
                 <div class="row align-items-center">
-                     {% if flores %}
-                    {% for flo in flores %}
+                     {% if lista_productos %}
+                    {% for prod in Producto %}
                         <div class="col-md-4">
                             <div class="card border-success mb-3" style="max-width: 18rem;">
-                                <div class="card-header" id="center">{{flo.nombreFlor}}</div>
-                                    <img class="card-img-top" id="macro" src="{{flo.imagenFlor}}" alt="">
+                                <div class="card-header" id="center">{{prod.nombreProducto}}</div>
+                                    {% comment %} <img class="card-img-top" id="macro" src="{{flo.imagenFlor}}" alt=""> {% endcomment %}
                                         <div class="card-body text-success">
-                                            <p class="card-text" >ID: {{flo.idFlor}}</p>
-                                            <p class="card-text">STOCK: {{flo.stockFlor}}</p>
-                                            <p class="card-text">PRECIO: ${{flo.precioFlor}}</p>
+                                            <p class="card-text" >ID: {{prod.idProducto}}</p>
+                                            <p class="card-text">STOCK: {{prod.categoria}}</p>
+                                            <p class="card-text">PRECIO: ${{prod.precioProducto}}</p>
                                         </div>
                                         <div class="card-footer">
                                             <small class="text-muted"><a href="" class="btn btn-primary">Agregar al carro</a></small>
