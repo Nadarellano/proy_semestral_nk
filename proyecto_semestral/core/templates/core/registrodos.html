@@ -1,0 +1,83 @@
+
+    
+    
+{% extends 'core/base.html'%}
+{% load static %}
+
+{% block title %}Suscripción{% endblock %}
+ 
+{% block content %}
+ <section class="page-section about-heading">
+      <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/contact.jpg" alt="">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading">Suscripción Socios</span>
+                   <br>
+                  {% comment %} <span class="section-heading-lower">Contacto</span> {% endcomment %}
+                </h2>
+                <div class="container">    
+                  <div class="row align-items-center">
+                    <div class="col-md-1"></div>
+                      <div class="col-md-10">
+                      
+                        <form method="post" action ="" id="formulario"   >
+                          {% csrf_token %}
+                          <div class="form-group row col-md-12 form-label inline" >
+              
+                            {{ form.as_table}}
+                          
+                          </div>
+
+                          <div class="col-md-12">
+
+                            <input type="submit"  id="btnvalida" class="form-control btn btn-warning" id="sendform1"  value="ENVIAR">
+                          </div>
+                          <div class="col-md-12">
+                            <input type="reset" class="form-control btn btn-warning" value="LIMPIAR">
+                          </div>
+                        </form>
+                      </div>
+                    <div class="col-md-1"></div>
+                  </div>
+                </div>
+           
+
+            
+
+            
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="container">
+      <div class="row g-2">
+        <div class="col-3"></div>
+        <div class="col-6">
+        <div>
+          <h5 class="som">"Si quiere Modificar o Eliminar su suscripción pinche aquí</H5>
+          <button class= "btn btn-primary"  type="submit"><a class="letra_link" href="datos_cliente">Ir a su registro</a></button>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    {% comment %} <div class="padre">
+      <div class="hijo_uno">Si quiere Modificar o Eliminar su suscripción pinche el siguiente botón</div>
+    </div>
+    <div class="padre">
+      <div class="hijo_dos"><button class= "btn btn-primary"  type="submit"><a class="letra_link" href="datos_cliente">Ir a su registro</a></button></div>
+    </div> {% endcomment %}
+
+
+
+   {% endblock %}
+
+
+

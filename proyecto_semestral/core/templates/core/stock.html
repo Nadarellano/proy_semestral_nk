@@ -1,0 +1,53 @@
+
+{% extends 'core/base.html'%}
+
+{% block title %}Stock{% endblock %}
+{% load static %}
+
+    {% block content %}
+         
+        <section>
+      <div class="container">    
+        <div class="row g-2">
+            <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title">STOCK DE PRODUCTOS</h4>
+                </div>
+            </div>  
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Código Producto</th>
+                    <th scope="col">Nombre Producto</th>
+                    <th scope="col">STOCK DISPONIBLE</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><p>**INFORMACION</p> </th>
+                    <td scope="row"><p>**INFORMACION</p> </td> 
+                    <td scope="row"><p>**STOCK</p> </td> 
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><p>**INFORMACION</p> </th>
+                    <td scope="row"><p>**INFORMACION</p> </td>  
+                    <td scope="row"><p>**STOCK</p> </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    </section>
+
+     
+       
+    {% endblock %}
+
+
+
+    

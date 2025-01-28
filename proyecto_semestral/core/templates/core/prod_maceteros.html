@@ -1,0 +1,57 @@
+
+{% extends 'core/base.html'%}
+
+{% block title %}Maceteros{% endblock %}
+{% load static %}
+
+    {% block content %}
+        <div>
+            <small class="text-muted"><a href="index#menuproductos" class="btn btn-outline-success">Regresar a productos</a></small>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-2"></div>
+                <div class="col-md-8" >
+                  <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
+                    <div class="card-body">
+                      <h4 class="card-title">Maceteros</h4>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-md-2"></div>
+            </div> 
+          </div> 
+          <hr>
+            <div class="container">
+                <div class="row align-items-center">
+                    {% if maceteros %}
+                    {% for mac in maceteros %}
+                        <div class="col-md-4">
+                            <div class="card border-success mb-3" style="max-width: 18rem;">
+                                <div class="card-header" id="center">{{mac.colorMacetero}}</div>
+                                    <img class="card-img-top" id="macro" src="{{mac.imagenMacetero}}" alt="">
+                                        <div class="card-body text-success">
+                                            <p class="card-text" >ID: {{mac.idMacetero}}</p>
+                                            <p class="card-text">STOCK: {{mac.stockMacetero}}</p>
+                                            <p class="card-text">PRECIO: ${{mac.precioMacetero}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted"><a href="" class="btn btn-primary">Agregar al carro</a></small>
+                                        </div>
+
+                                </div>
+                                
+                            </div>                        
+                    {% endfor %}
+
+                    {% else %}
+                    <h1> No hay stock de productos</h1>
+
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+       <hr>
+    {% endblock %}

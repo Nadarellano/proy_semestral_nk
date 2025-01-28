@@ -1,0 +1,88 @@
+
+
+{% extends 'core/base.html'%}
+
+{% block title %}Nosotros{% endblock %}
+{% load static %}
+
+    {% block content %}
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-2"></div>
+          <div class="col-md-8" >
+            <div class="card text-center border-warning mb-3" style="max-height: 18rem;">
+              <div class="card-body">
+                <h4 class="card-title">Nosotros</h4>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-2"></div>
+      </div> 
+    </div>
+      
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-2"></div>
+          <div class="col-md-8" >
+            <div>
+              <p class="somos">Somos un grupo de vecinos que hace un par de años nos organizamos para realizar la venta de productos de jardineria,  con el fin de ayudar a una fundación sin fines de lucro.</p>
+              <p class="somos">Comenzamos ofreciendo los productos en nuestras redes sociales y actualmente estamos implementando la venta online a través de nuestra página web.</p>
+            </div>
+          </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+        
+    <div class="container">    
+      <div class="row align-items-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div class="card">
+            <img class="cact" src="{% static 'core/img/comunidad.jpg'%}" alt="">
+            <div>
+              <p class="comment">Trabajamos con la comunidad</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img class="cact" src="{% static 'core/img/taller.jpg'%}" alt="">
+            <div>
+              <p class="comment">Realizamos diversos talleres</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row g-2">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <h3 id="ubi">Nuestra ubicación</h3>
+          <p class="address">Avda.Yungay N°49, San Felipe, V región.</p>
+          <div id="map" class="map"></div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    {% endblock %}
+
+
+   
+
+        
+
+
+    
+
+    
+
+
+
+    
+
+
+    

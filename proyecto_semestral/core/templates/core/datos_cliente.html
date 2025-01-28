@@ -1,0 +1,38 @@
+
+{% extends 'core/base.html'%}
+{% load static %}
+
+
+{% block title %}Datos_Cliente{% endblock %}
+
+
+    {% block content %}
+   <div class="row" >
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Rut</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Modificar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cliente in clientes %}
+    <tr>
+      
+      <td>{{cliente.rut}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{cliente.telefono}}</td>
+      <td><a href= "{% url 'form_mod_datos' cliente.rut %}">Modificar</a></td>
+      <td><a href= "{% url 'form_del_datos' cliente.rut %}">Eliminar</a></td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+   
+
+  </div>
+    {% endblock %}
