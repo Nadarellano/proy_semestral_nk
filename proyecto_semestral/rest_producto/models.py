@@ -21,7 +21,7 @@ class Order(models.Model):
 	cliente = models.ForeignKey(Cliente, on_delete=models.SET_NULL, null=True, blank=True)
 	fecha_order = models.DateTimeField(auto_now_add=True)
 	complete = models.BooleanField(default=False)
-	transaccion_id = models.CharField(primary_key=True, max_length=100, null=True)
+	transaccion_id = models.CharField(primary_key=True, max_length=100)
 
 	def __str__(self):
 		return str(self.id)

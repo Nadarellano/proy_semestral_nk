@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decouple import config
 
 from django.contrib.messages import constants as mensajes_de_error
 
@@ -23,10 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x1j+%3qp3&of&b#j86q6(ihlwfu&@*5at)mtasepw8)@(o*r+='
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", default=False, cast=bool)
+
 
 ALLOWED_HOSTS = []
 
@@ -84,19 +86,15 @@ WSGI_APPLICATION = 'proyecto_semestral.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe',
-        'USER': 'C##PROYECTOWEB',
-        'PASSWORD': 'PROYECTOWEB',
-        'TEST':{
-            'USER': 'default_test',
-            'TBLSPACE': 'default_test_tbls',
-            'TBLSPACE_TMP': 'default_test_tbls_tmp',
-
-        },
-
-    },
+        'ENGINE': config("DB_ENGINE"),
+        'NAME': config("DB_NAME"),
+        'USER': config("DB_USER"),
+        'PASSWORD': config("DB_PASSWORD"),
+        'HOST': config("DB_HOST", default="localhost"),
+        'PORT': config("DB_PORT", default="3306"),
+    }
 }
+
 
 
 # Password validation
@@ -145,10 +143,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Email Config
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '2c9025f9890835'
-EMAIL_HOST_PASSWORD = '2b276d822b7f32'
-EMAIL_PORT = '2525'
+EMAIL_HOST = config("EMAIL_HOST")
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EEMAIL_PORT = config("EMAIL_PORT")
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
 

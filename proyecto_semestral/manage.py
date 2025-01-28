@@ -8,9 +8,7 @@ import sys
 import os
 import sys
 
-import oracledb
 
-oracledb.init_oracle_client(lib_dir=r"C:\dboracle\instantclient_19_9")
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proyecto_semestral.settings')
